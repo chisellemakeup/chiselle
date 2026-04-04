@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom fonts from src/fonts – add your .woff2 / .woff / .ttf files and update paths if needed */
+@font-face {
+  font-family: "Lora-Regular";
+  src: url("./fonts/Lora-Regular.woff2") format("woff2");
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New-Icon-Script";
+  src: url("./fonts/New Icon Script.woff2") format("woff2");
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "New-Icon-Serif";
+  src: url("./fonts/New Icon Serif.woff2") format("woff2");
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fontspring-Bold";
+  src: url("./fonts/Fontspring-DEMO-theseasons-bd.woff2") format("woff2");
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fontspring-Regular";
+  src: url("./fonts/Fontspring-DEMO-theseasons-reg.woff2") format("woff2");
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+@layer base {
+  /* SplitType line wrappers — clip for line rise animations */
+  .line {
+    overflow: hidden;
+  }
+
+  body {
+    @apply font-sans antialiased bg-brand-bg text-brand-dark;
+  }
+
+  ::selection {
+    @apply bg-brand-gold/30 text-brand-dark;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply text-[10px] tracking-[0.4em] text-brand-mid uppercase mb-4 block;
+  }
+
+  .section-heading {
+    @apply font-serif text-4xl font-light leading-tight lg:text-5xl text-brand-dark;
+  }
+
+  .btn-primary {
+    @apply inline-block bg-brand-primary font-primary text-white text-[12px] leading-4 tracking-normal uppercase px-5 py-4 
+           hover:bg-brand-primary/80 rounded;
+  }
+
+  .btn-outline {
+    @apply inline-block font-primary border border-brand-dark text-brand-primary text-[12px] leading-4 tracking-normal uppercase px-5 py-4
+           hover:bg-[#ffe4dd] hover:text-brand-primary rounded;
+  }
+
+  .btn-outline-light {
+    @apply inline-block border border-brand-gold text-brand-gold text-[11px] tracking-[0.3em] uppercase px-12 py-4
+           hover:bg-brand-gold hover:text-brand-dark;
+  }
+
+  .fade-up {
+    @apply opacity-100;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep overflow scroll (trackpad, touch, drag). */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

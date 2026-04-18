@@ -18,15 +18,18 @@ export default function ScrubStagger({
   selector = "[data-scrub-item]",
   start = "top 88%",
   end = "top 48%",
-  y = 22,
+  y = 34,
   opacityFrom = 0,
   stagger = 0.07,
   scrub = 0.45,
-  scaleFrom = 1,
+  /** In-view stagger: stronger scale-up for clearer depth */
+  scaleFrom = 0.84,
+  /** Bottom-weighted origin so items feel anchored as they scale in */
+  transformOrigin = "50% 88%",
   /** When true, each item fades up in sequence once (good for cards / grids). */
   sequenceOnEnter = false,
   /** Duration per item when `sequenceOnEnter` (seconds) */
-  itemDuration = 0.42,
+  itemDuration = 0.52,
 }) {
   const rootRef = useRef(null);
 
@@ -44,7 +47,7 @@ export default function ScrubStagger({
         y,
         opacity: opacityFrom,
         scale: scaleFrom,
-        transformOrigin: "50% 50%",
+        transformOrigin,
         force3D: true,
       });
 
@@ -54,7 +57,7 @@ export default function ScrubStagger({
           opacity: 1,
           scale: 1,
           duration: itemDuration,
-          ease: "power2.out",
+          ease: "expo.out",
           stagger: {
             each: stagger,
             from: "start",
@@ -98,6 +101,7 @@ export default function ScrubStagger({
     stagger,
     scrub,
     scaleFrom,
+    transformOrigin,
     sequenceOnEnter,
     itemDuration,
   ]);

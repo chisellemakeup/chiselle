@@ -9,7 +9,7 @@ const contactImg2 = srcAssetUrl("home/home-contact-img2.png");
 const FIELDS = [
   { id: "name", label: "Your name", type: "text" },
   { id: "email", label: "Your email", type: "email" },
-  { id: "service", label: "The service you looking for", type: "text" },
+  { id: "service", label: "The service you are looking for", type: "text" },
 ];
 
 export default function Contact() {

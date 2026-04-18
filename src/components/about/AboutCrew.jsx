@@ -16,10 +16,8 @@ const CREW_MEMBERS = [
 export default function AboutCrew() {
   return (
     <section className="relative pb-10 md:py-16 lg:py-24 bg-[#fff7f3]">
-
-      
       <div
-        className="absolute inset-0 -left-5 -top-6 z-40 opacity-90 pointer-events-none md:left-0 md:top-0"
+        className="hidden absolute inset-0 -left-5 -top-6 z-40 opacity-90 pointer-events-none md:left-0 md:top-0 md:block"
         style={{
           backgroundImage: `url(${bgTexture6})`,
           backgroundSize: "auto",

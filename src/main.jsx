@@ -37,11 +37,27 @@ window.addEventListener("resize", () => {
 });
 
 function ScrollToTopOnRouteChange() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    lenis.scrollTo(0, { immediate: true });
-  }, [pathname]);
+    const run = () => {
+      if (hash) {
+        const id = hash.slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          lenis.scrollTo(el, {
+            offset: -96,
+            duration: 1.15,
+          });
+          return;
+        }
+      }
+      lenis.scrollTo(0, { immediate: true });
+    };
+
+    const t = window.setTimeout(run, 80);
+    return () => window.clearTimeout(t);
+  }, [pathname, hash]);
 
   return null;
 }

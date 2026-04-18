@@ -4,6 +4,8 @@ import { publicAssetUrl } from "../../config/assets";
 const SERVICE_DETAIL_CARDS = [
   {
     id: 1,
+    /** Footer / deep link: HD + Airbrush block entry */
+    anchorId: "hd-air-brush-makeup",
     title: "High Definition Makeup",
     image: publicAssetUrl("high-definition-img.png"),
     description:
@@ -18,7 +20,7 @@ const SERVICE_DETAIL_CARDS = [
     title: "Airbrush Makeup",
     image: publicAssetUrl("airbrush-img.png"),
     description:
-      "We use Temptu airbrush foundation blended traditionally to create a smooth, even, silicon-based finish. The result is a lightweight, water-resistant base with a natural glam effect that lasts up to 10 hours. Ideal for all-day events, this finish feels comfortable on the skin while looking refined in person and polished on camera.",
+      "We use Temptu airbrush foundation blended traditionally to create a smooth, even, silicone-based finish. The result is a lightweight, water-resistant base with a natural glam effect that lasts up to 10 hours. Ideal for all-day events, this finish feels comfortable on the skin while looking refined in person and polished on camera.",
     priceLabel: "Starts From",
     price: "₹55,000",
     showNotes: false,
@@ -26,10 +28,11 @@ const SERVICE_DETAIL_CARDS = [
   },
   {
     id: 3,
+    anchorId: "christian-weddings",
     title: "Christian Wedding Makeup",
     image: publicAssetUrl("christian-wedding-img.png"),
     description:
-      "Thoughtfully created for long wedding days that begin at the church and flow into the reception. Using Temptu airbrush or silicon-based foundations, we focus on a strong, long-lasting base with soft definition, allowing the makeup to hold through ceremonies while staying elegant and timeless.",
+      "Thoughtfully created for long wedding days that begin at the church and flow into the reception. Using Temptu airbrush or silicone-based foundations, we focus on a strong, long-lasting base with soft definition, allowing the makeup to hold through ceremonies while staying elegant and timeless.",
     priceLabel: "Starts From",
     price: "₹50,000",
     showNotes: false,
@@ -199,7 +202,14 @@ export default function HighDefinitionSection() {
         start="top 86%"
       >
         {SERVICE_DETAIL_CARDS.map((service, index) => (
-          <div key={service.id} data-scrub-item>
+          <div
+            key={service.id}
+            id={service.anchorId}
+            data-scrub-item
+            className={
+              service.anchorId ? "scroll-mt-24 md:scroll-mt-32" : undefined
+            }
+          >
             <ServiceDetailCard
               service={service}
               reverse={index % 2 === 1}

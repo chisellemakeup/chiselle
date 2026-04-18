@@ -28,8 +28,7 @@ export default function AcademyDifferentSection() {
                     REAL WORK. REAL WISDOM
                   </h3>
                   <p className="text-sm leading-relaxed font-primary text-brand-secondary md:px-6">
-                    Learn directly from Nowshiba&apos;s decade long hands-on
-                    experience with real brides, real skin, and real pressure.
+                    Learn directly from Nowshiba&apos;s decade-long hands-on experience with real brides, real skin, and real pressure.
                     No trend-chasing. No shortcuts. Just what actually works.
                   </p>
                 </div>
@@ -43,7 +42,7 @@ export default function AcademyDifferentSection() {
                   </h3>
                   <p className="text-sm leading-relaxed font-primary text-brand-secondary md:px-6">
                     We get the foundation right first. Skin prep, products,
-                    blending, longevity, then advanced artistry. Because great
+                    blending, longevity, then, advanced artistry. Because great
                     makeup starts long before the final look.
                   </p>
                 </div>

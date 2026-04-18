@@ -8,21 +8,21 @@ const CREW_PACKAGES = [
   {
     id: 1,
     title: "Crew Basic",
-    experience: "1+ years experienced artists",
+    experience: "1+ years of experienced artists",
     hdPrice: "₹22,500",
     airbrushPrice: "₹25,000",
   },
   {
     id: 2,
     title: "Crew Pro",
-    experience: "2+ years experienced artists",
+    experience: "2+ years of experienced artists",
     hdPrice: "₹27,500",
     airbrushPrice: "₹32,000",
   },
   {
     id: 3,
     title: "Crew Elite",
-    experience: "4+ years experienced artists",
+    experience: "4+ years of experienced artists",
     hdPrice: "₹30,000",
     airbrushPrice: "₹35,000",
   },
@@ -55,7 +55,7 @@ function CrewPackageCard({ pkg }) {
           <div className="space-y-3">
             <p className="text-sm font-primary text-brand-secondary">
               <span className="font-semibold text-brand-primary">
-                What&apos;s included :
+                What&apos;s included:
               </span>
             </p>
             <ul className="space-y-1.5 text-sm md:text-base text-brand-secondary font-primary">
@@ -101,7 +101,10 @@ function CrewPackageCard({ pkg }) {
 
 export default function HdAirbrushCrewSection() {
   return (
-    <section className="py-16 md:py-24 bg-[#FFE4DD40]">
+    <section
+      id="hd-air-brush-makeup"
+      className="scroll-mt-24 bg-[#FFE4DD40] py-16 md:scroll-mt-32 md:py-24"
+    >
       <div className="container px-5 lg:px-[60px]">
         {/* Heading */}
         <div className="mb-12 text-center">
@@ -110,7 +113,7 @@ export default function HdAirbrushCrewSection() {
           </FadeUpInView>
           <FadeUpInView as="p" delay={0.16} className="mx-auto max-w-2xl text-sm leading-relaxed md:text-base text-brand-secondary font-primary">
             We use premium formulas from brands like Armani, Dior, NARS and
-            Chanel for flawless, lightweight base. HD and airbrush techniques
+            Chanel for flawless, a lightweight base. HD and airbrush techniques
             give a natural glow that photographs beautifully and lasts for
             hours.
           </FadeUpInView>

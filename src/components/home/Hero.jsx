@@ -80,49 +80,89 @@ export default function Hero() {
       />
       <div className="container flex overflow-hidden relative z-10 flex-col gap-10 min-h-screen lg:flex-row lg:items-center lg:gap-32">
         <div className="relative w-full lg:w-[65%] flex items-center lg:pt-20">
-          <div className="relative z-10 pt-32 md:pt-32 md:pb-20">
-            <h1 className="mb-6 text-left font-serif text-4xl font-light tracking-[0.02em] text-brand-primary !leading-[1.2] md:text-5xl lg:text-[4rem]">
-              <FadeUpInView
-                as="span"
-                playOnMount
-                mountReady={introReady}
-                delay={0}
-                blurPx={14}
-                skewFrom={1.8}
-                clipReveal
-                className="block will-change-transform"
-              >
-                <span className="font-normal font-secondary">LUXURY</span>
-                <span className="font-script text-brand-primary">
-                  Bridal makeup <span className="!font-secondary">&</span>
-                </span>
-              </FadeUpInView>
-              <FadeUpInView
-                as="span"
-                playOnMount
-                mountReady={introReady}
-                delay={0.16}
-                blurPx={16}
-                skewFrom={2.2}
-                clipReveal
-                className="block mt-1 will-change-transform md:mt-2"
-              >
-                <span className="font-script text-brand-primary">Hair </span>
-                <span className="font-normal font-secondary">
-                  THAT STILL FEELS <br className="hidden md:block" /> LIKE YOU
-                </span>
-              </FadeUpInView>
-              <FadeUpInView
-                as="span"
-                playOnMount
-                mountReady={introReady}
-                delay={0.34}
-                blurPx={14}
-                skewFrom={1.8}
-                clipReveal
-                className="block mt-1 will-change-transform md:mt-2"
-              ></FadeUpInView>
-            </h1>
+          <div className="relative z-10 pt-32 md:pt-48 lg:pt-32 lg:pb-20">
+            <div className="hidden md:block">
+              <h1 className="mb-6 text-left font-serif text-4xl font-light tracking-[0.02em] text-brand-primary !leading-[1.2] md:text-5xl lg:text-[4rem]">
+                <FadeUpInView
+                  as="span"
+                  playOnMount
+                  mountReady={introReady}
+                  delay={0}
+                  blurPx={14}
+                  skewFrom={1.8}
+                  clipReveal
+                  className="block will-change-transform"
+                >
+                  <span className="font-normal font-secondary">LUXURY</span>
+                  <span className="font-script text-brand-primary">
+                    Bridal makeup <span className="!font-secondary">&</span>
+                  </span>
+                </FadeUpInView>
+                <FadeUpInView
+                  as="span"
+                  playOnMount
+                  mountReady={introReady}
+                  delay={0.16}
+                  blurPx={16}
+                  skewFrom={2.2}
+                  clipReveal
+                  className="block mt-1 will-change-transform md:mt-2"
+                >
+                  <span className="font-script text-brand-primary">Hair </span>
+                  <span className="font-normal font-secondary">
+                    THAT STILL FEELS <br className="hidden md:block" /> LIKE YOU
+                  </span>
+                </FadeUpInView>
+              </h1>
+            </div>
+
+            <div className="block md:hidden">
+              <h1 className="mb-6 text-left font-serif text-4xl font-light tracking-[0.02em] text-brand-primary !leading-[1.2] md:text-5xl lg:text-[4rem]">
+                <FadeUpInView
+                  as="span"
+                  playOnMount
+                  mountReady={introReady}
+                  delay={0}
+                  blurPx={14}
+                  skewFrom={1.8}
+                  clipReveal
+                  className="block will-change-transform"
+                >
+                  <span className="font-normal font-secondary">LUXURY</span>
+                  <span className="font-script text-brand-primary">Bridal</span>
+                </FadeUpInView>
+                <FadeUpInView
+                  as="span"
+                  playOnMount
+                  mountReady={introReady}
+                  delay={0}
+                  blurPx={14}
+                  skewFrom={1.8}
+                  clipReveal
+                  className="block will-change-transform"
+                >
+                  <span className="font-script text-brand-primary">
+                    makeup <span className="!font-secondary">&</span> Hair
+                  </span>
+
+                  <span className="font-normal font-secondary"> that</span>
+                </FadeUpInView>
+                <FadeUpInView
+                  as="span"
+                  playOnMount
+                  mountReady={introReady}
+                  delay={0.34}
+                  blurPx={14}
+                  skewFrom={1.8}
+                  clipReveal
+                  className="block mt-1 will-change-transform md:mt-2"
+                >
+                  <span className="font-normal font-secondary">
+                    Still Feels Like You
+                  </span>
+                </FadeUpInView>
+              </h1>
+            </div>
 
             <FadeUpLines
               as="p"
@@ -138,8 +178,10 @@ export default function Hero() {
               fromEnd
             >
               Personalised bridal makeup and hair services crafted with
-              experience, intention, and meticulous attention to detail. <br />{" "}
-              <br /> Based in Chennai, Coimbatore, Available worldwide.
+              experience, intention, and meticulous attention to detail.{" "}
+              <br className="hidden md:block" />{" "}
+              <br className="hidden md:block" /> Based in Chennai, Coimbatore,
+              Available worldwide.
             </FadeUpLines>
 
             <FadeUpInView

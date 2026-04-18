@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 import { publicAssetUrl, srcAssetUrl } from "../config/assets";
 
 const footerLogo = srcAssetUrl("footer-logo.png");
 
 const PRIMARY_LINKS = [
   { label: "ABOUT", href: "/about" },
-  { label: "SERVICES", href: "/services" },
-  { label: "PRICING", href: "/services" },
+  { label: "SERVICES", href: "/makeup-by-nowshiba" },
+  { label: "PRICING", href: "/makeup-by-nowshiba" },
   { label: "GALLERY", href: "/gallery" },
   { label: "ACADEMY", href: "/academy" },
   { label: "FAQS", href: "/faqs" },
@@ -14,9 +15,22 @@ const PRIMARY_LINKS = [
 ];
 
 const SECONDARY_LINKS = [
-  { label: "HD/AIR BRUSH MAKEUP", href: "/services#hd-air-brush-makeup" },
-  { label: "CHRISTIAN WEDDINGS", href: "/services#christian-weddings" },
-  { label: "OUTSTATION WEDDINGS", href: "/services#outstation-weddings" },
+  {
+    label: "HD/AIR BRUSH MAKEUP",
+    href: "/chiselle-crew#hd-air-brush-makeup",
+  },
+  // {
+  //   label: "HD/AIR BRUSH CREW",
+  //   href: "/chiselle-crew#hd-air-brush-makeup",
+  // },
+  {
+    label: "CHRISTIAN WEDDINGS",
+    href: "/makeup-by-nowshiba#christian-weddings",
+  },
+  {
+    label: "OUTSTATION WEDDINGS",
+    href: "/chiselle-crew#outstation-weddings",
+  },
 ];
 
 const SOCIAL_LINKS = [
@@ -63,26 +77,26 @@ export default function Footer() {
         {/* Primary nav row */}
         <nav className="flex flex-wrap gap-y-6 gap-x-10 justify-center mb-10 lg:gap-x-20">
           {PRIMARY_LINKS.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-base tracking-[0.7px] text-white uppercase font-primary hover:text-brand-light"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        {/* Secondary nav row */}
+        {/* Secondary nav row — deep links to pricing sections */}
         <nav className="flex flex-wrap gap-y-6 gap-x-10 justify-center mb-14">
           {SECONDARY_LINKS.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="text-base tracking-[0.7px] text-white uppercase font-primary hover:text-brand-light"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 

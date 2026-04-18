@@ -67,7 +67,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white">
+    <header className="fixed top-0 right-0 left-0 z-50 bg-white">
       <div className="container flex justify-between items-center py-4 md:justify-center">
         <Link to="/" className="flex justify-center md:mx-auto">
           <img
@@ -180,21 +180,18 @@ export default function Navbar() {
           aria-label="Close menu"
         >
           <span className="sr-only">Close menu</span>
-          <span aria-hidden="true" className="block -mt-0.5">
+          <span aria-hidden="true" className="block -mt-[6px]">
             ×
           </span>
         </button>
-        <div className="flex flex-col gap-8 justify-center items-center px-6 pt-28 pb-12 w-full min-h-screen">
+        <div className="flex flex-col gap-8 px-6 pt-24 pb-12 w-full min-h-screen">
           {NAV_LINKS.map(({ label, href, dropdown }) =>
             dropdown ? (
-              <div
-                key={label}
-                className="flex flex-col gap-0 items-center w-full max-w-md"
-              >
+              <div key={label} className="flex flex-col gap-0 w-full max-w-md">
                 <button
                   type="button"
                   onClick={() => setMobileServicesOpen((v) => !v)}
-                  className="flex gap-2 justify-center items-center py-2 w-full text-sm uppercase font-primary text-brand-bg"
+                  className="flex gap-2 items-center py-2 w-full uppercase text-md font-primary text-brand-bg"
                   aria-expanded={mobileServicesOpen}
                   aria-controls="mobile-services-submenu"
                 >
@@ -210,7 +207,7 @@ export default function Navbar() {
                 </button>
                 <div
                   id="mobile-services-submenu"
-                  className={`flex w-full flex-col items-center gap-4 overflow-hidden ${
+                  className={`flex w-full flex-col gap-4 overflow-hidden ${
                     mobileServicesOpen
                       ? "py-3 max-h-40 opacity-100"
                       : "py-0 max-h-0 opacity-0"
@@ -245,7 +242,7 @@ export default function Navbar() {
                 key={label}
                 to={href}
                 onClick={() => setOpen(false)}
-                className={`text-sm uppercase font-primary ${
+                className={`text-md uppercase font-primary ${
                   isRouteActive(href) ? "text-brand-light" : "text-brand-bg"
                 } hover:text-brand-primary`}
               >

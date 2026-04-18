@@ -21,7 +21,10 @@ export default function FadeUpLines({
   staggerEach = 0.07,
   /** When true, stagger from the last line upward */
   fromEnd = true,
-  y = 24,
+  /** Optional fixed offset (px); if omitted, mount vs scroll use `yMount` / `yScroll`. */
+  y,
+  yMount = 22,
+  yScroll = 38,
   /** Delay before line tween starts (use with `playOnMount` for hero sequencing) */
   delay = 0,
   /** Line animation duration when `playOnMount` (scroll mode uses scrub, not this) */
@@ -34,12 +37,16 @@ export default function FadeUpLines({
   blurPx = 0,
   /** Slight Y variance between lines (px) for a more organic stagger */
   yJitter = 4,
+  /** Starting scale per line when scroll-driven (`playOnMount` off). Hero copy ignores this. */
+  scaleScroll = 0.88,
 }) {
   const ref = useRef(null);
 
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || prefersReducedMotion()) return undefined;
+
+    const lineY = y ?? (playOnMount ? yMount : yScroll);
 
     const split = new SplitType(el, {
       types: ["lines"],
@@ -67,7 +74,7 @@ export default function FadeUpLines({
           const jitter =
             yJitter > 0 ? (i % 2 === 0 ? yJitter : -yJitter * 0.6) : 0;
           const from = {
-            y: y + jitter,
+            y: lineY + jitter,
             opacity: 0,
             force3D: true,
           };
@@ -99,11 +106,18 @@ export default function FadeUpLines({
     ensureScrollTrigger();
 
     const ctx = gsap.context(() => {
-      gsap.set(lines, { y, opacity: 0, force3D: true });
+      gsap.set(lines, {
+        y: lineY,
+        opacity: 0,
+        scale: scaleScroll,
+        transformOrigin: "50% 90%",
+        force3D: true,
+      });
 
       gsap.to(lines, {
         y: 0,
         opacity: 1,
+        scale: 1,
         ease: "none",
         stagger: {
           each: staggerEach,
@@ -130,6 +144,8 @@ export default function FadeUpLines({
     staggerEach,
     fromEnd,
     y,
+    yMount,
+    yScroll,
     delay,
     lineDuration,
     playOnMount,
@@ -137,6 +153,7 @@ export default function FadeUpLines({
     ease,
     blurPx,
     yJitter,
+    scaleScroll,
   ]);
 
   return (

@@ -20,8 +20,7 @@ export default function AcademyCareerCta() {
           makeup career?
         </FadeUpInView>
         <FadeUpInView as="p" delay={0.16} className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed md:text-base font-primary">
-          Join our next batch and learn from Bangalore’s most trusted makeup
-          educator
+          Join our next batch and learn from Bengaluru's most trusted makeup educator
         </FadeUpInView>
         <FadeUpInView variant="button" delay={0.24}>
           <a

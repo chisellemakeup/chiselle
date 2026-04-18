@@ -108,7 +108,7 @@ export default function About() {
           scrub={0}
           className="mb-6 text-[14px] leading-[20px] text-secondary uppercase font-primary"
         >
-          SO WHATS CHISELLE ABOUT
+          SO WHAT'S CHISELLE ABOUT
         </FadeUpInView>
 
         <FadeUpLines

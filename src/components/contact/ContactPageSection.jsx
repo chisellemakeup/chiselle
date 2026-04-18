@@ -88,7 +88,7 @@ export default function ContactPageSection() {
                 htmlFor="service"
                 className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
               >
-                The service you looking for
+                The service you’re looking for
               </label>
               <select
                 id="service"
@@ -121,7 +121,7 @@ export default function ContactPageSection() {
             </div>
 
             <button type="submit" className="btn-primary">
-              Send a request
+              Send a Request
             </button>
           </form>
         </div>

@@ -33,20 +33,35 @@ export function WhyUs() {
       />
 
       <div className="container flex relative flex-col items-center mx-auto text-center">
-        <FadeUpInView as="p" delay={0.02} className="mb-5 text-sm text-white uppercase font-primary">
+        <FadeUpInView
+          as="p"
+          delay={0.02}
+          className="mb-5 text-sm text-white uppercase font-primary"
+        >
           WHY DO BRIDES COME TO US?
         </FadeUpInView>
-        <FadeUpInView as="h2" delay={0.1} className="mb-6 font-secondary text-[1.75rem] md:text-[2.2rem] lg:text-[42px] leading-snug tracking-[0.02em] text-white uppercase">
-          THE BEST BRIDAL LOOK IS THE
-          <br className="hidden lg:block" />
+        <FadeUpInView
+          as="h2"
+          delay={0.1}
+          className="mb-6 font-secondary text-[1.75rem] md:text-[2.2rem] lg:text-[42px] leading-snug tracking-[0.02em] text-white uppercase"
+        >
+          THE BEST BRIDAL LOOK IS THE <br className="hidden lg:block" />
           ONE THAT FEELS LIKE YOU
         </FadeUpInView>
-        <FadeUpInView as="p" delay={0.18} className="mb-4 text-base md:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]">
+        <FadeUpInView
+          as="p"
+          delay={0.18}
+          className="mb-4 text-base md:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]"
+        >
           Chiselle brides are our biggest asset. They trust us with their
           vision, and we make sure every detail of their bridal makeup and hair
           is taken care of.
         </FadeUpInView>
-        <FadeUpInView as="p" delay={0.26} className="mb-0 text-base lg:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]">
+        <FadeUpInView
+          as="p"
+          delay={0.26}
+          className="mb-0 text-base lg:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]"
+        >
           The best moments? When a bride says, &ldquo;Omg, I still feel like
           me&rdquo; or when the family can&apos;t stop beaming with joy seeing
           her. Minimal, real, and intentional. The result? Happy, radiant and
@@ -73,10 +88,18 @@ export function SignatureStyle() {
       <div className="container relative mx-auto">
         {/* Heading */}
         <div className="mb-10 text-center lg:mb-14">
-          <FadeUpInView as="p" delay={0.02} className="mb-5 text-sm uppercase text-brand-secondary font-primary">
+          <FadeUpInView
+            as="p"
+            delay={0.02}
+            className="mb-5 text-sm uppercase text-brand-secondary font-primary"
+          >
             SIGNATURE BRIDAL STYLE
           </FadeUpInView>
-          <FadeUpInView as="h2" delay={0.1} className="mb-6 font-secondary text-[1.75rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
+          <FadeUpInView
+            as="h2"
+            delay={0.1}
+            className="mb-6 font-secondary text-[1.75rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
+          >
             WHERE MINIMAL MEETS RADIANT
           </FadeUpInView>
         </div>
@@ -172,10 +195,18 @@ export function HowWeWork() {
 
       <div className="container relative">
         <div className="text-center">
-          <FadeUpInView as="p" delay={0.02} className="mb-5 text-sm uppercase text-brand-secondary font-primary">
+          <FadeUpInView
+            as="p"
+            delay={0.02}
+            className="mb-5 text-sm uppercase text-brand-secondary font-primary"
+          >
             HOW WE WORK
           </FadeUpInView>
-          <FadeUpInView as="h2" delay={0.1} className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
+          <FadeUpInView
+            as="h2"
+            delay={0.1}
+            className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
+          >
             3 SIMPLE STEPS
           </FadeUpInView>
         </div>
@@ -206,7 +237,12 @@ export function HowWeWork() {
             </div>
           </div>
 
-          <FadeUpInView as="div" className="mt-14 text-center" variant="button" delay={0.18}>
+          <FadeUpInView
+            as="div"
+            className="mt-14 text-center"
+            variant="button"
+            delay={0.18}
+          >
             <a href="#contact" className="btn-primary">
               LEARN MORE
             </a>

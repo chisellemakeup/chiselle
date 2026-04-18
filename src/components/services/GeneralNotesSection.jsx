@@ -12,8 +12,8 @@ const LEFT_NOTES = [
 ];
 
 const RIGHT_NOTES = [
-  "Hair flowers, jewellery, non-traditional bindi, powered contact lenses, and nail paint will not be provided.",
-  "The complete makeover requires a total of 3 hours – 45 minutes to 1 hour exclusively for Nowshiba’s makeup session and 2 hours for hair styling, draping and jewellery and getting the bride fully ready.",
+  "Hair flowers, jewellery, non-traditional bindi, prescription contact lenses, and nail paint will not be provided.",
+  "The complete makeover requires a total of 3 hours – 45 minutes to 1 hour exclusively for Nowshiba’s makeup session and 2 hours for hair styling, draping, jewellery, and getting the bride fully ready.",
   "Availability is confirmed only when the event date, time, and venue are finalised.",
   "A 50% non-refundable advance is required to confirm any booking; the remaining 50% to be paid 2 days before or on the event day (Bank transfer only). All charges exclude 5% GST.",
 ];

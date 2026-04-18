@@ -6,11 +6,35 @@ function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-/** `durationScroll` = in-view one-shot; `durationMount` = hero / playOnMount */
+/**
+ * `yMount` / `scaleMount` — hero & `playOnMount` (restrained).
+ * `yScroll` / `scaleScroll` / `durationScroll` — in-view scroll (bigger lift + scale).
+ */
 const presets = {
-  text: { durationScroll: 0.58, durationMount: 1.12, y: 18, scale: 1 },
-  card: { durationScroll: 0.5, durationMount: 0.88, y: 32, scale: 0.985 },
-  button: { durationScroll: 0.44, durationMount: 0.78, y: 8, scale: 1 },
+  text: {
+    durationScroll: 0.68,
+    durationMount: 1.12,
+    yMount: 18,
+    yScroll: 40,
+    scaleMount: 1,
+    scaleScroll: 0.86,
+  },
+  card: {
+    durationScroll: 0.58,
+    durationMount: 0.88,
+    yMount: 32,
+    yScroll: 52,
+    scaleMount: 0.985,
+    scaleScroll: 0.84,
+  },
+  button: {
+    durationScroll: 0.52,
+    durationMount: 0.78,
+    yMount: 8,
+    yScroll: 20,
+    scaleMount: 1,
+    scaleScroll: 0.9,
+  },
 };
 
 /**
@@ -31,7 +55,7 @@ export default function FadeUpInView({
   /** Number = scrub strength; `0` or `false` = animate once on enter (no scrub) */
   scrub,
   /** Narrower range = faster in-view scrub completion */
-  start = "top 90%",
+  start = "top 75%",
   end = "top 58%",
   enabled = true,
   /** Animate once when the page loads (hero); ignores scroll / scrub */
@@ -50,12 +74,11 @@ export default function FadeUpInView({
   const elRef = useRef(null);
   const preset = presets[variant] ?? presets.text;
   const resolvedDuration =
-    duration ??
-    (playOnMount ? preset.durationMount : preset.durationScroll);
-  const resolvedY = y ?? preset.y;
-  const resolvedScale = scale ?? preset.scale;
-  const resolvedScrub =
-    scrub === undefined || scrub === null ? 0.45 : scrub;
+    duration ?? (playOnMount ? preset.durationMount : preset.durationScroll);
+  const resolvedY = y ?? (playOnMount ? preset.yMount : preset.yScroll);
+  const resolvedScale =
+    scale ?? (playOnMount ? preset.scaleMount : preset.scaleScroll);
+  const resolvedScrub = scrub === undefined || scrub === null ? 0.45 : scrub;
   const useScrub =
     !playOnMount && resolvedScrub !== 0 && resolvedScrub !== false;
 
@@ -131,8 +154,7 @@ export default function FadeUpInView({
             trigger: node,
             start,
             end,
-            scrub:
-              typeof resolvedScrub === "number" ? resolvedScrub : 1,
+            scrub: typeof resolvedScrub === "number" ? resolvedScrub : 1,
             invalidateOnRefresh: true,
           },
         });
@@ -142,7 +164,9 @@ export default function FadeUpInView({
           scrollTrigger: {
             trigger: node,
             start,
-            toggleActions: once ? "play none none none" : "play reverse play reverse",
+            toggleActions: once
+              ? "play none none none"
+              : "play reverse play reverse",
             once,
             invalidateOnRefresh: true,
           },

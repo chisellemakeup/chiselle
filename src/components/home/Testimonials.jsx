@@ -29,7 +29,7 @@ export default function Testimonials() {
             TESTIMONIALS
           </FadeUpInView>
           <FadeUpInView as="h2" delay={0.1} className="md:mb-6 font-secondary text-[28px] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
-            MY CLIENT&apos;S WORDS
+            MY CLIENTS WORDS
             <br />
             SAY IT BEST.
           </FadeUpInView>

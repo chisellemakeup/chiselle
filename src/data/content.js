@@ -113,12 +113,12 @@ export const SERVICES = [
 
 export const TESTIMONIALS = [
   {
-    name: "Yuvanakini Balaji",
+    name: "Yuvaranjini Balaji",
     role: "",
     text: `I had 3 different makeup artists for 3 of my functions, and I can confidently say that Nowshiba’s work was the best of all. Not a lot of discussion took place before concocting this look of mine. But Nowshiba made me look the prettiest bride And I didn’t know makeup artists team could be so fun until I met them. Thank you so much for your wonderful work. Lastly I must say this…choose Nowshiba else you’re gonna regret it!🥰😎`,
   },
   {
-    name: "Tahira Kumar",
+    name: "Tahera Kumar",
     role: "",
     text: `I had such a great experience with Nowshiba. The makeup was flawless and long-lasting, and the products used were of high quality. More than all this Nowshiba is the sweetest and really genuine in her work`,
   },
@@ -143,7 +143,7 @@ export const TESTIMONIALS = [
     text: `Thank you so much Nowshiba and team, for my bridal makeover and for giving me a very serene experience !! I loved how subtle and elegant the makeup turned out to be. I would totally recommend it to everyone :)`,
   },
   {
-    name: "Subheeksha Srinivasan",
+    name: "Subhiksha Srinivasan",
     role: "",
     text: `I’d like to take this opportunity to thank Nowshiba + team. We had such a seamless and good experience with you guys. Everyone asked us who did our makeup and I’m so happy with the results. Thank you so much for your work and making the process so easy and enjoyable :)`,
   },
@@ -153,7 +153,7 @@ export const TESTIMONIALS = [
     text: `One of the best MUA in Chennai, hands down! Really understands skin textures and makes you feel very comfortable while she’s at her magic. Recommend Pui as well from her team - just an amazing duo to make your wedding makeup look incredible!🥰`,
   },
   {
-    name: "Narmada Udaykumar",
+    name: "Narmada Udayakumar",
     role: "",
     text: `Couldn't have asked for a better team to do my make-up for my reception. Not only did they ease me up before the event with their fun conversations, but they got me dressed in literally 30-40 minutes. Though I wanted something very simple, Nowshiba convinced me to go for a bold lipstick to elevate my look and I am so glad she did. The make-up was one thing, the experience with their team was a whole different thing. Thank you Team Chiselle <3`,
   },

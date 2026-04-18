@@ -18,10 +18,10 @@ function FaqHero() {
       <div className="container relative px-6 mx-auto max-w-3xl text-center">
         <h1 className="mb-5 font-script text-[26px] md:text-[34px] lg:text-[42px] leading-tight tracking-[0.02em]">
           <FadeUpInView as="span" playOnMount delay={0} className="block">
-            Things brides usually ask us,
+          Things brides usually ask us,
           </FadeUpInView>
           <FadeUpInView as="span" playOnMount delay={0.14} className="mt-1 block">
-            we have it answered here
+          we’ve answered them here
           </FadeUpInView>
         </h1>
         <FadeUpInView
@@ -31,10 +31,7 @@ function FaqHero() {
           className="text-sm leading-relaxed md:text-base font-primary"
         >
           From booking timelines to trials and wedding-day prep, this page is
-          here to make choosing your bridal makeup team feel simpler and less
-          overwhelming. Think of it as a gentle guide to how we work, what to
-          expect, and how we support you every step of the way – and if you
-          still need clarity, we&apos;re just a message away.
+          here to make choosing your bridal makeup team feel simpler and more reassuring. Think of it as a gentle guide to how we work, what to expect and how we support you every step of the way. If you still need clarity, we’re just a message away.
         </FadeUpInView>
       </div>
     </section>

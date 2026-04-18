@@ -4,6 +4,7 @@ import { publicAssetUrl } from "../../config/assets";
 const CREW_PACKAGES = [
   {
     id: 1,
+    anchorId: "outstation-weddings",
     title: "Outstation Wedding",
     image: publicAssetUrl("christian-wedding-img.png"),
     description:
@@ -151,7 +152,14 @@ export default function CrewPackagesSection() {
         start="top 86%"
       >
         {CREW_PACKAGES.map((pkg, index) => (
-          <div key={pkg.id} data-scrub-item>
+          <div
+            key={pkg.id}
+            id={pkg.anchorId}
+            data-scrub-item
+            className={
+              pkg.anchorId ? "scroll-mt-24 md:scroll-mt-32" : undefined
+            }
+          >
             <CrewPackageCard pkg={pkg} reverse={index % 2 === 0} />
           </div>
         ))}

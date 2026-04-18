@@ -8,12 +8,12 @@ const FAQ_ITEMS = [
     question:
       "What is the difference between HD bridal makeup and airbrush bridal makeup?",
     answer:
-      "HD makeup uses traditional products blended seamlessly for a natural, skin-like finish, while airbrush bridal makeup uses a silicone-based formula for ultra-light, long-lasting coverage. Both can look natural when done correctly, and the right choice depends on your skin type, event duration, and comfort. At Chiselle, we skip the airbrush gun and instead use airbrush-finish techniques with products that create a lightweight, water-resistant base that feels comfortable and lasts beautifully in humid climate.",
+      "HD makeup uses traditional products blended seamlessly for a natural, skin-like finish, while airbrush bridal makeup uses a silicone-based formula for ultra-light, long-lasting coverage. Both can look natural when done correctly, and the right choice depends on your skin type, event duration, and comfort. At Chiselle, we skip the airbrush gun and instead use airbrush-finish techniques with products that create a lightweight, water-resistant base that feels comfortable and lasts beautifully in a humid climate.",
   },
   {
     question: "Is airbrush bridal makeup suitable for Chennai weather?",
     answer:
-      "Yes. Airbrush-style bridal makeup works well in Chennai’s humid climate because of its lightweight feel and long-wear properties. With the right prep, setting, and product layering, HD products can also perform just as well while keeping your skin comfortable through long ceremonies.",
+      "Yes. Airbrush-style bridal makeup works well in Chennai’s humid climates because of its lightweight feel and long-wear properties. With the right prep, setting, and product layering, HD products can also perform just as well while keeping your skin comfortable through long ceremonies.",
   },
   {
     question: "What bridal makeup works best for South Indian weddings?",

@@ -171,7 +171,7 @@ export default function AcademyCoursesSection() {
             delay={0.18}
             className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary"
           >
-            Take the first step towards realising your dreams in the world of
+            Take the first step towards realizing your dreams in the world of
             makeup artistry. Select any of our courses and embark on a
             transformative learning experience that will shape your future
             career.

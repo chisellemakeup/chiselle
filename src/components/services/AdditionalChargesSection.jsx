@@ -6,15 +6,15 @@ const CENTER_IMAGE = publicAssetUrl("additional-charges-img.png");
 
 const LEFT_CHARGES = [
   { amount: "₹3,500", label: "Extra Saree Drape" },
-  { amount: "₹1,000", label: "Extra lehenga drape" },
+  { amount: "₹1,000", label: "Extra Lehenga drape" },
   { amount: "₹1,500/hr", label: "Waiting charge between changes" },
-  { amount: "₹1,500/hr", label: "Extra hair extension/ Sowri (Highlighted)" },
+  { amount: "₹1,500/hr", label: "Extra hair extension / Sowri (Highlighted)" },
   { amount: "₹4,500", label: "Madisar Drape" },
 ];
 
 const RIGHT_CHARGES = [
   { amount: "₹750 – ₹1,500", label: "Kunjalam / Andal Kondai" },
-  { amount: "₹300 – ₹2,000", label: "Hair Accessories ranging from" },
+  { amount: "₹300 – ₹2,000", label: "Hair accessories ranging from" },
   { amount: "₹300 – ₹2,000", label: "Makeup Touch-up" },
   { amount: "₹300 – ₹2,000", label: "Change of Hairstyle" },
   { amount: "₹1,000 – ₹2,000", label: "Jewellery stitching" },

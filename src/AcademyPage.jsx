@@ -18,7 +18,7 @@ export default function AcademyPage() {
         <AcademyCoursesSection />
         <Gallery
           sectionTitle="OUR STUDENTS' WORK"
-          sectionDescription="Hear from our students whose dreams we have nurtured into flourishing careers as successful Makeup artists."
+          sectionDescription="Hear from our students whose dreams we have nurtured into flourishing careers as successful makeup artists."
           ctaLabel="VIEW GALLERY"
           hideSectionLabel
         />

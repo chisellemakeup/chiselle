@@ -78,7 +78,18 @@ Put your images in `public/images/` and reference them as `/images/filename.jpg`
 
 ## 📬 Contact Form
 
-The form in `Contact.jsx` is set up with local state. To make it functional, wire it to:
-- [Formspree](https://formspree.io) – easiest no-backend option
-- [EmailJS](https://emailjs.com) – send emails directly from browser
-- Your own API endpoint
+The form in `Contact.jsx` validates all fields and sends submissions using [EmailJS](https://emailjs.com).
+
+Setup:
+1. Create an EmailJS account and add your destination email service (Gmail, Outlook, etc.).
+2. Create an email template with these variables:
+   - `from_name`
+   - `from_email`
+   - `service_requested`
+   - `message`
+3. Copy `.env.example` to `.env`.
+4. Fill in:
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_PUBLIC_KEY`
+5. Restart the dev server.

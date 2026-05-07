@@ -10,6 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [hideTopRow, setHideTopRow] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -52,6 +53,43 @@ export default function Navbar() {
     }
   }, [open, currentPath]);
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const isDesktop = window.innerWidth >= 768;
+      if (!isDesktop) {
+        setHideTopRow(false);
+        lastScrollY = window.scrollY;
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+      const movedEnough = Math.abs(currentScrollY - lastScrollY) > 4;
+
+      if (!movedEnough) return;
+      if (currentScrollY <= 8) {
+        setHideTopRow(false);
+      } else {
+        setHideTopRow(isScrollingDown);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth < 768) setHideTopRow(false);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const isHashActive = (href) => {
     if (!href || !href.startsWith("#")) return false;
     if (location.pathname !== "/") return false;
@@ -68,7 +106,11 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 bg-white">
-      <div className="container flex justify-between items-center py-4 md:justify-center">
+      <div
+        className={`container flex justify-between items-center py-4 transition-all duration-300 md:justify-center ${
+          hideTopRow ? "md:max-h-0 md:py-0 md:opacity-0 md:overflow-hidden" : "md:max-h-24 md:opacity-100"
+        }`}
+      >
         <Link to="/" className="flex justify-center md:mx-auto">
           <img
             src={logo}

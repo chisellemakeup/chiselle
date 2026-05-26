@@ -2,11 +2,10 @@ import FadeUpInView from "../common/FadeUpInView";
 import ScrubStagger from "../common/ScrubStagger";
 import { publicAssetUrl } from "../../config/assets";
 
-const CARD_IMAGE = publicAssetUrl("crew-card-img.png");
-
 const CREW_PACKAGES = [
   {
     id: 1,
+    cardImage: publicAssetUrl("crew-basic-card-img.jpg"),
     title: "Crew Basic",
     experience: "1+ years of experienced artists",
     hdPrice: "₹22,500",
@@ -14,6 +13,7 @@ const CREW_PACKAGES = [
   },
   {
     id: 2,
+    cardImage: publicAssetUrl("crew-pro-card-img.jpg"),
     title: "Crew Pro",
     experience: "2+ years of experienced artists",
     hdPrice: "₹27,500",
@@ -21,6 +21,7 @@ const CREW_PACKAGES = [
   },
   {
     id: 3,
+    cardImage: publicAssetUrl("crew-elite-card-img.jpg"),
     title: "Crew Elite",
     experience: "4+ years of experienced artists",
     hdPrice: "₹30,000",
@@ -34,7 +35,7 @@ function CrewPackageCard({ pkg }) {
       {/* Image */}
       <div className="overflow-hidden p-4">
         <img
-          src={CARD_IMAGE}
+          src={pkg.cardImage}
           alt={pkg.title}
           className="object-cover w-full h-56 md:h-64 rounded-[4px]"
         />

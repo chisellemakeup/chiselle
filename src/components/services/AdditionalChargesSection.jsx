@@ -2,7 +2,7 @@ import FadeUpInView from "../common/FadeUpInView";
 import ScrubStagger from "../common/ScrubStagger";
 import { publicAssetUrl } from "../../config/assets";
 
-const CENTER_IMAGE = publicAssetUrl("additional-charges-img.png");
+const CENTER_IMAGE = publicAssetUrl("additional-charges-img.jpg");
 
 const LEFT_CHARGES = [
   { amount: "₹3,500", label: "Extra Saree Drape" },

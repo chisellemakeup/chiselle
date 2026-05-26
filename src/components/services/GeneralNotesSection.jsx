@@ -2,7 +2,7 @@ import FadeUpInView from "../common/FadeUpInView";
 import ScrubStagger from "../common/ScrubStagger";
 import { publicAssetUrl } from "../../config/assets";
 
-const TOP_IMAGE = publicAssetUrl("chiselle-academy-bg-img.png");
+const TOP_IMAGE = publicAssetUrl("general-note&require-img.jpg");
 
 const LEFT_NOTES = [
   "All products are sanitised after every use for hygiene and quality.",

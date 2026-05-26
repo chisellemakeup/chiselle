@@ -6,7 +6,7 @@ import FadeUpInView from "./components/common/FadeUpInView";
 
 import { publicAssetUrl } from "./config/assets";
 
-const contactBannerImg = publicAssetUrl("contact-banner-img.png");
+const contactBannerImg = publicAssetUrl("contact-banner-img.jpg");
 
 function ContactHero() {
   return (

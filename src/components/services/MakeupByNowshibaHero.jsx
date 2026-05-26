@@ -1,7 +1,7 @@
 import FadeUpInView from "../common/FadeUpInView";
 import { publicAssetUrl } from "../../config/assets";
 
-const bannerImg = publicAssetUrl("makeup-by-nowshiba-hero.png");
+const bannerImg = publicAssetUrl("services-banner-img.jpg");
 
 export default function MakeupByNowshibaHero() {
   return (

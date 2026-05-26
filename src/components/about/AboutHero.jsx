@@ -1,7 +1,7 @@
 import FadeUpInView from "../common/FadeUpInView";
 import { publicAssetUrl } from "../../config/assets";
 
-const aboutBannerImg = publicAssetUrl("about-banner-img.png");
+const aboutBannerImg = publicAssetUrl("about-banner-img.jpg");
 
 export default function AboutHero() {
   return (

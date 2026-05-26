@@ -6,7 +6,7 @@ const CREW_PACKAGES = [
     id: 1,
     anchorId: "outstation-weddings",
     title: "Outstation Wedding",
-    image: publicAssetUrl("christian-wedding-img.png"),
+    image: publicAssetUrl("outstation-wedding-img.jpg"),
     description:
       "If your wedding is outside Chennai and you want to look like your most natural, confident self, the Chiselle Crew has you covered.",
     showIncluded: true,
@@ -19,7 +19,7 @@ const CREW_PACKAGES = [
   {
     id: 2,
     title: "Groom Makeup Package",
-    image: publicAssetUrl("destination-wedding-img.png"),
+    image: publicAssetUrl("groom-makeup-package-img.jpg"),
     description:
       "It’s time for grooms to shine too. Our qualified professionals specialise in groom makeup and grooming that enhances your features while keeping the look natural, polished, and camera-ready.",
     showIncluded: false,
@@ -30,7 +30,7 @@ const CREW_PACKAGES = [
   {
     id: 3,
     title: "Trial Makeup",
-    image: publicAssetUrl("destination-wedding-img.png"),
+    image: publicAssetUrl("cc-trial-makeup-img.jpg"),
     description:
       "Trial makeup will be done exclusively by the designated team member at Chiselle studio, based on their availability. Each session is limited to 1 hour, during which one or two looks will be demonstrated. The trial is optional and charged separately from the bridal package.",
     showIncluded: false,

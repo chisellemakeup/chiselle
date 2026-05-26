@@ -7,7 +7,7 @@ const SERVICE_DETAIL_CARDS = [
     /** Footer / deep link: HD + Airbrush block entry */
     anchorId: "hd-air-brush-makeup",
     title: "High Definition Makeup",
-    image: publicAssetUrl("high-definition-img.png"),
+    image: publicAssetUrl("high-definition-img.jpg"),
     description:
       "Designed to look flawless in real life and on high-definition cameras. HD makeup wears beautifully in humid conditions and photographs cleanly without flashback or heaviness – perfect for brides and events where close-up photos matter.",
     priceLabel: "Starts From",
@@ -18,7 +18,7 @@ const SERVICE_DETAIL_CARDS = [
   {
     id: 2,
     title: "Airbrush Makeup",
-    image: publicAssetUrl("airbrush-img.png"),
+    image: publicAssetUrl("airbrush-img.jpg"),
     description:
       "We use Temptu airbrush foundation blended traditionally to create a smooth, even, silicone-based finish. The result is a lightweight, water-resistant base with a natural glam effect that lasts up to 10 hours. Ideal for all-day events, this finish feels comfortable on the skin while looking refined in person and polished on camera.",
     priceLabel: "Starts From",
@@ -30,7 +30,7 @@ const SERVICE_DETAIL_CARDS = [
     id: 3,
     anchorId: "christian-weddings",
     title: "Christian Wedding Makeup",
-    image: publicAssetUrl("christian-wedding-img.png"),
+    image: publicAssetUrl("christian-wedding-img.jpg"),
     description:
       "Thoughtfully created for long wedding days that begin at the church and flow into the reception. Using Temptu airbrush or silicone-based foundations, we focus on a strong, long-lasting base with soft definition, allowing the makeup to hold through ceremonies while staying elegant and timeless.",
     priceLabel: "Starts From",
@@ -41,7 +41,7 @@ const SERVICE_DETAIL_CARDS = [
   {
     id: 4,
     title: "Destination Wedding Makeup",
-    image: publicAssetUrl("destination-wedding-img.png"),
+    image: publicAssetUrl("destination-wedding-img.jpg"),
     description:
       "If your wedding is outside Chennai and you want to look like your best, most natural self, you’re in the right place. Our destination wedding makeup is thoughtfully tailored to suit the location, climate, and length of your celebrations. We use professional, trusted brands like Tarte, MAC, NARS, Chanel, and Temptu Airbrush to ensure your makeup stays fresh, comfortable, and flawless throughout your wedding events.",
     priceLabel: "Starts From",
@@ -55,7 +55,7 @@ const SERVICE_DETAIL_CARDS = [
   {
     id: 5,
     title: "Guest Makeup",
-    image: publicAssetUrl("christian-wedding-img.png"),
+    image: publicAssetUrl("guest-makeup-img.jpg"),
     description:
       "Effortless, well-balanced makeup tailored to complement your outfit and the occasion. Guest makeup is designed to feel comfortable, polished, and long-wearing, enhancing your features without overpowering your natural look.",
     priceLabel: "",
@@ -70,7 +70,7 @@ const SERVICE_DETAIL_CARDS = [
   {
     id: 6,
     title: "Trial Makeup",
-    image: publicAssetUrl("destination-wedding-img.png"),
+    image: publicAssetUrl("trial-makeup-img.jpg"),
     description:
       "Trial makeup will be done exclusively by Nowshiba at her studio, subject to her availability. Each session is limited to 1 hour, during which one or two looks will be demonstrated. Missed slots will be rescheduled only according to the next available time. Please note that the trial provides a preview look and is not a full bridal makeover. The trial is optional, and if chosen, the charges are separate from the bridal package and will not be deducted from the final package cost.",
     priceLabel: "",

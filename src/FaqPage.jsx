@@ -5,7 +5,7 @@ import InstaFeedSection from "./components/common/InstaFeedSection";
 import FadeUpInView from "./components/common/FadeUpInView";
 import { publicAssetUrl } from "./config/assets";
 
-const faqBannerImg = publicAssetUrl("faq-banner-img.png");
+const faqBannerImg = publicAssetUrl("faq-banner-img.jpg");
 
 function FaqHero() {
   return (

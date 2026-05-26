@@ -5,7 +5,7 @@ import ScrubStagger from "../common/ScrubStagger";
 
 const bgTexture = srcAssetUrl("bg-texture-1-light.svg");
 const bgTexture3 = srcAssetUrl("bg-texture-3.svg");
-const signatureImg = srcAssetUrl("home/signature-bridal-img.png");
+const signatureImg = srcAssetUrl("signature-bridal-img.jpg");
 const bgTexture4 = srcAssetUrl("bg-texture-4.png");
 const bgTexture5 = srcAssetUrl("bg-texture-5.png");
 

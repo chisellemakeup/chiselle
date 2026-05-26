@@ -1,7 +1,7 @@
 import { srcAssetUrl } from "../../config/assets";
 import FadeUpInView from "../common/FadeUpInView";
 
-const academyBg = srcAssetUrl("home/chiselle-academy-bg-img.png");
+const academyBg = srcAssetUrl("chiselle-academy-bg-img.jpg");
 const bgTexture = srcAssetUrl("bg-texture-5.svg");
 
 export default function AcademySection() {

@@ -3,9 +3,9 @@ import { srcAssetUrl } from "../../config/assets";
 import FadeUpInView from "../common/FadeUpInView";
 import ScrubStagger from "../common/ScrubStagger";
 
-const serviceImg1 = srcAssetUrl("services-img1.png");
-const serviceImg2 = srcAssetUrl("services-img2.png");
-const serviceImg3 = srcAssetUrl("services-img3.png");
+const serviceImg1 = srcAssetUrl("services-img1.jpg");
+const serviceImg2 = srcAssetUrl("services-img2.jpg");
+const serviceImg3 = srcAssetUrl("services-img3.jpg");
 const bgTexture6 = srcAssetUrl("bg-texture-6.png");
 
 const SERVICE_IMAGES = [serviceImg1, serviceImg2, serviceImg3];

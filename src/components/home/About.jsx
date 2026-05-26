@@ -7,7 +7,7 @@ import ScrubStagger from "../common/ScrubStagger";
 import { ensureScrollTrigger, gsap, ScrollTrigger } from "../../lib/gsapSetup";
 
 const bgTexture = srcAssetUrl("bg-texture-2.svg");
-const ABOUT_IMAGE_SRC = srcAssetUrl("home-about-img.png");
+const ABOUT_IMAGE_SRC = srcAssetUrl("nowshiba-founder.jpg");
 
 export default function About() {
   const sectionRef = useRef(null);

@@ -6,14 +6,14 @@ import ScrubStagger from "../common/ScrubStagger";
 import GalleryLightbox from "../common/GalleryLightbox";
 import GalleryImageTile from "../common/GalleryImageTile";
 
-const gallery1 = srcAssetUrl("home/gallery-img1.png");
-const gallery2 = srcAssetUrl("home/gallery-img2.png");
-const gallery3 = srcAssetUrl("home/gallery-img3.png");
-const gallery4 = srcAssetUrl("home/gallery-img4.png");
-const gallery5 = srcAssetUrl("home/gallery-img5.png");
-const gallery6 = srcAssetUrl("home/gallery-img6.png");
-const gallery7 = srcAssetUrl("home/gallery-img7.png");
-const gallery8 = srcAssetUrl("home/gallery-img8.png");
+const gallery1 = srcAssetUrl("gallery-img1.jpg");
+const gallery2 = srcAssetUrl("gallery-img2.jpg");
+const gallery3 = srcAssetUrl("gallery-img3.png");
+const gallery4 = srcAssetUrl("gallery-img4.jpg");
+const gallery5 = srcAssetUrl("gallery-img5.jpg");
+const gallery6 = srcAssetUrl("gallery-img6.jpg");
+const gallery7 = srcAssetUrl("gallery-img7.jpg");
+const gallery8 = srcAssetUrl("gallery-img8.jpg");
 const bgTexture = srcAssetUrl("bg-texture-5.svg");
 
 const GALLERY_IMAGES = [

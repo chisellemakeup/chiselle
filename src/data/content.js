@@ -173,14 +173,15 @@ export const MARQUEE_ITEMS = [
 // Hero right side: two vertical marquee tracks (CDN paths under chsielle-assets/assets/home/...).
 export const HERO_MARQUEE_IMAGES = [
   [
-    publicAssetUrl("hero-marquee-top-slide1.png"),
-    publicAssetUrl("hero-marquee-top-slide2.png"),
-    publicAssetUrl("hero-marquee-top-slide3.png"),
+    publicAssetUrl("marquee-top-slide1.jpg"),
+    publicAssetUrl("marquee-top-slide2.jpg"),
+    publicAssetUrl("marquee-top-slide3.jpg"),
+    publicAssetUrl("marquee-top-slide4.jpg"),
   ],
   [
-    publicAssetUrl("hero-marquee-bottom-slide1.png"),
-    publicAssetUrl("hero-marquee-bottom-slide2.png"),
-    publicAssetUrl("hero-marquee-bottom-slide3.png"),
-    publicAssetUrl("hero-marquee-bottom-slide4.png"),
+    publicAssetUrl("marquee-bottom-slide1.jpg"),
+    publicAssetUrl("marquee-bottom-slide2.jpg"),
+    publicAssetUrl("marquee-bottom-slide3.jpg"),
+    publicAssetUrl("marquee-bottom-slide4.png"),
   ],
 ];

@@ -1,20 +1,33 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
+
+function normalizeItems(images, items) {
+  if (items?.length) return items;
+  if (images?.length) return images.map((src) => ({ type: "image", src }));
+  return [];
+}
 
 /**
- * Full-screen image viewer with keyboard and backdrop close.
- * Does not alter gallery layout — only overlays when open.
+ * Full-screen gallery viewer (images + portrait videos) with keyboard navigation.
  */
 export default function GalleryLightbox({
   images,
+  items: itemsProp,
   activeIndex,
   onClose,
   onNavigate,
 }) {
+  const items = normalizeItems(images, itemsProp);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const open =
     activeIndex !== null &&
     activeIndex !== undefined &&
     activeIndex >= 0 &&
-    activeIndex < images.length;
+    activeIndex < items.length;
+
+  const current = open ? items[activeIndex] : null;
+  const isVideo = current?.type === "video";
 
   useEffect(() => {
     if (!open) return;
@@ -25,15 +38,32 @@ export default function GalleryLightbox({
     };
   }, [open]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+    setIsPlaying(false);
+  }, [activeIndex, open]);
+
+  useEffect(() => {
+    if (!open) {
+      const video = videoRef.current;
+      if (video) video.pause();
+      setIsPlaying(false);
+    }
+  }, [open]);
+
   const goPrev = useCallback(() => {
-    if (!images.length || activeIndex === null) return;
-    onNavigate((activeIndex - 1 + images.length) % images.length);
-  }, [images.length, activeIndex, onNavigate]);
+    if (!items.length || activeIndex === null) return;
+    onNavigate((activeIndex - 1 + items.length) % items.length);
+  }, [items.length, activeIndex, onNavigate]);
 
   const goNext = useCallback(() => {
-    if (!images.length || activeIndex === null) return;
-    onNavigate((activeIndex + 1) % images.length);
-  }, [images.length, activeIndex, onNavigate]);
+    if (!items.length || activeIndex === null) return;
+    onNavigate((activeIndex + 1) % items.length);
+  }, [items.length, activeIndex, onNavigate]);
 
   useEffect(() => {
     if (!open) return;
@@ -46,16 +76,24 @@ export default function GalleryLightbox({
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose, goPrev, goNext]);
 
-  if (!open) return null;
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  };
 
-  const src = images[activeIndex];
+  if (!open || !current) return null;
 
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8"
       role="dialog"
       aria-modal="true"
-      aria-label="Image preview"
+      aria-label={isVideo ? "Video preview" : "Image preview"}
     >
       <button
         type="button"
@@ -71,7 +109,7 @@ export default function GalleryLightbox({
       >
         ×
       </button>
-      {images.length > 1 && (
+      {items.length > 1 && (
         <>
           <button
             type="button"
@@ -80,7 +118,7 @@ export default function GalleryLightbox({
               e.stopPropagation();
               goPrev();
             }}
-            aria-label="Previous image"
+            aria-label="Previous"
           >
             ‹
           </button>
@@ -91,7 +129,7 @@ export default function GalleryLightbox({
               e.stopPropagation();
               goNext();
             }}
-            aria-label="Next image"
+            aria-label="Next"
           >
             ›
           </button>
@@ -101,11 +139,51 @@ export default function GalleryLightbox({
         className="relative z-[101] max-h-[90vh] max-w-[min(100vw-2rem,1200px)]"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={src}
-          alt=""
-          className="max-h-[90vh] w-auto max-w-full object-contain shadow-2xl"
-        />
+        {isVideo ? (
+          <div className="relative">
+            <video
+              key={current.src}
+              ref={videoRef}
+              src={current.src}
+              className="max-h-[90vh] w-auto max-w-full object-contain shadow-2xl aspect-[9/16]"
+              playsInline
+              preload="auto"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              onEnded={() => setIsPlaying(false)}
+            />
+            <button
+              type="button"
+              onClick={togglePlay}
+              className="flex absolute inset-0 justify-center items-center border-0 bg-transparent cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              aria-label={isPlaying ? "Pause video" : "Play video"}
+            >
+              <span
+                className={`inline-flex justify-center items-center w-14 h-14 rounded-full shadow-lg backdrop-blur-sm bg-white/90 transition-opacity ${
+                  isPlaying ? "opacity-0 hover:opacity-100" : "opacity-100"
+                }`}
+              >
+                {isPlaying ? (
+                  <span className="flex gap-1.5" aria-hidden>
+                    <span className="block w-1 h-5 bg-brand-dark" />
+                    <span className="block w-1 h-5 bg-brand-dark" />
+                  </span>
+                ) : (
+                  <span
+                    className="ml-0.5 inline-block w-0 h-0 border-t-[10px] border-b-[10px] border-l-[14px] border-t-transparent border-b-transparent border-l-brand-dark"
+                    aria-hidden
+                  />
+                )}
+              </span>
+            </button>
+          </div>
+        ) : (
+          <img
+            src={current.src}
+            alt=""
+            className="max-h-[90vh] w-auto max-w-full object-contain shadow-2xl"
+          />
+        )}
       </div>
     </div>
   );

@@ -6,6 +6,19 @@ import FadeUpInView from "./common/FadeUpInView";
 import ScrubStagger from "./common/ScrubStagger";
 import GalleryLightbox from "./common/GalleryLightbox";
 import GalleryImageTile from "./common/GalleryImageTile";
+import GalleryVideoTile from "./common/GalleryVideoTile";
+
+// Traditional Bridal – portrait videos
+const tbVideo1 = srcAssetUrl("traditional-bridal-video%20(1).mp4");
+const tbVideo2 = srcAssetUrl("traditional-bridal-video%20(2).mp4");
+const tbVideo3 = srcAssetUrl("traditional-bridal-video%20(3).mp4");
+const tbVideo4 = srcAssetUrl("traditional-bridal-video%20(4).mp4");
+const tbVideo5 = srcAssetUrl("traditional-bridal-video%20(5).mp4");
+const tbVideo6 = srcAssetUrl("traditional-bridal-video%20(6).mp4");
+const tbVideo7 = srcAssetUrl("traditional-bridal-video%20(7).mp4");
+const tbVideo8 = srcAssetUrl("traditional-bridal-video%20(8).mp4");
+const tbVideo9 = srcAssetUrl("traditional-bridal-video%20(9).mp4");
+const tbVideo10 = srcAssetUrl("traditional-bridal-video%20(10).mp4");
 
 // Traditional Bridal
 const gallery1 = srcAssetUrl("traditional-bridal%20(1).jpg");
@@ -548,6 +561,21 @@ function splitIntoColumns(items, maxColumns = 4) {
   return cols;
 }
 
+const TAB_VIDEOS = {
+  "Traditional Bridal": [
+    tbVideo1,
+    tbVideo2,
+    tbVideo3,
+    tbVideo4,
+    tbVideo5,
+    tbVideo6,
+    tbVideo7,
+    tbVideo8,
+    tbVideo9,
+    tbVideo10,
+  ],
+};
+
 const TAB_IMAGES = {
   "Traditional Bridal": [
     gallery1,
@@ -705,12 +733,24 @@ const TAB_IMAGES = {
   "Chiselle Crew": [cc1, cc2, cc3, cc4, cc5, cc6, cc7, cc8, cc9, cc10, cc11],
 };
 
+function buildGalleryItems(images, videos) {
+  return [
+    ...videos.map((src) => ({ type: "video", src })),
+    ...images.map((src) => ({ type: "image", src })),
+  ];
+}
+
 export default function GalleryTabs() {
   const [activeTab, setActiveTab] = React.useState(TABS[0]);
   const [lightboxIndex, setLightboxIndex] = React.useState(null);
 
   const images = TAB_IMAGES[activeTab] ?? [];
-  const desktopColumns = splitIntoColumns(images, 4);
+  const videos = TAB_VIDEOS[activeTab] ?? [];
+  const galleryItems = React.useMemo(
+    () => buildGalleryItems(images, videos),
+    [images, videos],
+  );
+  const desktopColumns = splitIntoColumns(galleryItems, 4);
 
   React.useEffect(() => {
     setLightboxIndex(null);
@@ -758,7 +798,7 @@ export default function GalleryTabs() {
         </FadeUpInView>
 
         {/* Gallery content – masonry style similar to home page */}
-        {images.length === 0 ? (
+        {galleryItems.length === 0 ? (
           <div className="py-16 text-center">
             <p className="text-sm uppercase font-primary text-brand-primary/80">
               No images yet for “{activeTab}”.
@@ -775,13 +815,20 @@ export default function GalleryTabs() {
               itemDuration={0.38}
               start="top 88%"
             >
-              {images.map((src, idx) => (
-                <div key={`${src}-${idx}`} data-scrub-item>
-                  <GalleryImageTile
-                    src={src}
-                    className="h-[180px]"
-                    onOpen={() => setLightboxIndex(idx)}
-                  />
+              {galleryItems.map((item, idx) => (
+                <div key={`${item.type}-${item.src}-${idx}`} data-scrub-item>
+                  {item.type === "video" ? (
+                    <GalleryVideoTile
+                      src={item.src}
+                      onOpen={() => setLightboxIndex(idx)}
+                    />
+                  ) : (
+                    <GalleryImageTile
+                      src={item.src}
+                      className="h-[180px]"
+                      onOpen={() => setLightboxIndex(idx)}
+                    />
+                  )}
                 </div>
               ))}
             </ScrubStagger>
@@ -797,15 +844,26 @@ export default function GalleryTabs() {
             >
               {desktopColumns.map((col, colIdx) => (
                 <div key={colIdx} className="flex flex-col gap-4">
-                  {col.map((src, rowIdx) => (
+                  {col.map((item, rowIdx) => (
                     <div
-                      key={`${String(src)}-${colIdx}-${rowIdx}`}
+                      key={`${item.type}-${String(item.src)}-${colIdx}-${rowIdx}`}
                       data-scrub-item
                     >
-                      <GalleryImageTile
-                        src={src}
-                        onOpen={() => setLightboxIndex(images.indexOf(src))}
-                      />
+                      {item.type === "video" ? (
+                        <GalleryVideoTile
+                          src={item.src}
+                          onOpen={() =>
+                            setLightboxIndex(galleryItems.indexOf(item))
+                          }
+                        />
+                      ) : (
+                        <GalleryImageTile
+                          src={item.src}
+                          onOpen={() =>
+                            setLightboxIndex(galleryItems.indexOf(item))
+                          }
+                        />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -815,7 +873,7 @@ export default function GalleryTabs() {
         )}
 
         <GalleryLightbox
-          images={images}
+          items={galleryItems}
           activeIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onNavigate={setLightboxIndex}

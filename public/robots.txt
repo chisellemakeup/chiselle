@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chiselle.netlify.app/sitemap.xml
+Sitemap: https://chisellemakeupandhair.com/sitemap.xml

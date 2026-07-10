@@ -138,9 +138,9 @@ function ServiceDetailCard({ service, reverse, whiteBg }) {
             <div className="flex flex-col gap-6">
               {service.showIncluded && (
                 <div>
-                  <h3 className="mb-4 text-base text-brand-primary font-primary">
+                  {/* <h3 className="mb-4 text-base text-brand-primary font-primary">
                     What&apos;s Included
-                  </h3>
+                  </h3> */}
                   {/* <ul className="space-y-1.5 text-base md:text-lg text-brand-secondary font-primary">
                     <li>✦ HD Matte / Dewy Finish Makeup</li>
                     <li>✦ Bridal Hairstyling</li>

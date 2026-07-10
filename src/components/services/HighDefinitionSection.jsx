@@ -14,6 +14,11 @@ const SERVICE_DETAIL_CARDS = [
     price: "₹50,000",
     showNotes: false,
     showIncluded: true,
+    included: [
+      "✦ HD Makeup Finish (Matte / Dewy)",
+      "✦ Bridal Hairstyling",
+      "✦ Saree / Lehenga Draping",
+    ],
   },
   {
     id: 2,
@@ -42,6 +47,11 @@ const SERVICE_DETAIL_CARDS = [
     price: "₹50,000",
     showNotes: false,
     showIncluded: true,
+    included: [
+      "✦ Airbrush Makeup",
+      "✦ Bridal Hairstyling",
+      "✦ Saree / Lehenga Draping",
+    ],
   },
   {
     id: 4,
@@ -56,6 +66,11 @@ const SERVICE_DETAIL_CARDS = [
       "All travel (flight/train/bus), accommodation, local transfers, and cab arrangements (including venues without airport access) are to be arranged or reimbursed by the client for the Chiselle team.",
     ],
     showIncluded: true,
+    included: [
+      "✦ HD / Airbrush Makeup Finish ",
+      "✦ Bridal Hairstyling",
+      "✦ Saree / Lehenga Draping",
+    ],
   },
   {
     id: 5,

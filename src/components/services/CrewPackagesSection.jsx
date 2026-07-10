@@ -10,6 +10,11 @@ const CREW_PACKAGES = [
     description:
       "If your wedding is outside Chennai and you want to look like your most natural, confident self, the Chiselle Crew has you covered.",
     showIncluded: true,
+    included: [
+      "✦ Airbrush Makeup Finish (Matte / Dewy)",
+      "✦ Bridal Hairstyling",
+      "✦ Saree / Lehenga Draping",
+    ],
     priceLabel: "",
     price: "₹37,500",
     notes: [

@@ -82,7 +82,7 @@ function CrewPackageCard({ pkg, reverse }) {
                     What&apos;s Included
                   </h3>
                   <ul className="space-y-1.5 text-base md:text-lg text-brand-secondary font-primary">
-                    <li>✦ HD Matte / Dewy Finish Makeup</li>
+                    <li>✦ HD / Airbrush Makeup Finish </li>
                     <li>✦ Bridal Hairstyling</li>
                     <li>✦ Saree / Lehenga Draping</li>
                   </ul>

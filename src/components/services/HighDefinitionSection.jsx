@@ -10,7 +10,7 @@ const SERVICE_DETAIL_CARDS = [
     image: publicAssetUrl("high-definition-img.jpg"),
     description:
       "Designed to look flawless in real life and on high-definition cameras. HD makeup wears beautifully in humid conditions and photographs cleanly without flashback or heaviness – perfect for brides and events where close-up photos matter.",
-    priceLabel: "Starts From",
+    priceLabel: "",
     price: "₹50,000",
     showNotes: false,
     showIncluded: true,

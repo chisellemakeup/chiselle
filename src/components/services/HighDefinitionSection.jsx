@@ -21,7 +21,7 @@ const SERVICE_DETAIL_CARDS = [
     image: publicAssetUrl("airbrush-img.jpg"),
     description:
       "We use Temptu airbrush foundation blended traditionally to create a smooth, even, silicone-based finish. The result is a lightweight, water-resistant base with a natural glam effect that lasts up to 10 hours. Ideal for all-day events, this finish feels comfortable on the skin while looking refined in person and polished on camera.",
-    priceLabel: "Starts From",
+    priceLabel: "",
     price: "₹55,000",
     showNotes: false,
     showIncluded: true,
@@ -44,7 +44,7 @@ const SERVICE_DETAIL_CARDS = [
     image: publicAssetUrl("destination-wedding-img.jpg"),
     description:
       "If your wedding is outside Chennai and you want to look like your best, most natural self, you’re in the right place. Our destination wedding makeup is thoughtfully tailored to suit the location, climate, and length of your celebrations. We use professional, trusted brands like Tarte, MAC, NARS, Chanel, and Temptu Airbrush to ensure your makeup stays fresh, comfortable, and flawless throughout your wedding events.",
-    priceLabel: "Starts From",
+    priceLabel: "",
     price: "₹1,15,000",
     showNotes: true,
     notes: [

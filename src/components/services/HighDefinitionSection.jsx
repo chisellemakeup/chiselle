@@ -11,7 +11,7 @@ const SERVICE_DETAIL_CARDS = [
     description:
       "Designed to look flawless in real life and on high-definition cameras. HD makeup wears beautifully in humid conditions and photographs cleanly without flashback or heaviness – perfect for brides and events where close-up photos matter.",
     priceLabel: "",
-    price: "₹50,000",
+    price: "₹55,000",
     showNotes: false,
     showIncluded: true,
     included: [
@@ -27,7 +27,7 @@ const SERVICE_DETAIL_CARDS = [
     description:
       "We use Temptu airbrush foundation blended traditionally to create a smooth, even, silicone-based finish. The result is a lightweight, water-resistant base with a natural glam effect that lasts up to 10 hours. Ideal for all-day events, this finish feels comfortable on the skin while looking refined in person and polished on camera.",
     priceLabel: "",
-    price: "₹55,000",
+    price: "₹60,000",
     showNotes: false,
     showIncluded: true,
     included: [
@@ -44,7 +44,7 @@ const SERVICE_DETAIL_CARDS = [
     description:
       "Thoughtfully created for long wedding days that begin at the church and flow into the reception. Using Temptu airbrush or silicone-based foundations, we focus on a strong, long-lasting base with soft definition, allowing the makeup to hold through ceremonies while staying elegant and timeless.",
     priceLabel: "",
-    price: "₹50,000",
+    price: "₹75,000",
     showNotes: false,
     showIncluded: true,
     included: [

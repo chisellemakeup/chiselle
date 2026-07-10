@@ -60,7 +60,7 @@ function CrewPackageCard({ pkg }) {
               </span>
             </p>
             <ul className="space-y-1.5 text-sm md:text-base text-brand-secondary font-primary">
-              <li>✦ HD Matte / Dewy Finish Makeup</li>
+              <li>✦ HD / Airbrush Makeup Finish</li>
               <li>✦ Bridal Hairstyling</li>
               <li>✦ Saree / Lehenga Draping</li>
             </ul>

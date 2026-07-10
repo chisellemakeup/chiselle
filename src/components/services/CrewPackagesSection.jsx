@@ -10,11 +10,6 @@ const CREW_PACKAGES = [
     description:
       "If your wedding is outside Chennai and you want to look like your most natural, confident self, the Chiselle Crew has you covered.",
     showIncluded: true,
-    included: [
-      "✦ Airbrush Makeup Finish (Matte / Dewy)",
-      "✦ Bridal Hairstyling",
-      "✦ Saree / Lehenga Draping",
-    ],
     priceLabel: "",
     price: "₹37,500",
     notes: [
@@ -86,23 +81,11 @@ function CrewPackageCard({ pkg, reverse }) {
                   <h3 className="text-base text-brand-primary font-primary">
                     What&apos;s Included
                   </h3>
-                  {/* <ul className="space-y-1.5 text-base md:text-lg text-brand-secondary font-primary">
+                 <ul className="space-y-1.5 text-base md:text-lg text-brand-secondary font-primary">
                     <li>✦ HD / Airbrush Makeup Finish </li>
                     <li>✦ Bridal Hairstyling</li>
                     <li>✦ Saree / Lehenga Draping</li>
-                  </ul> */}
-                  {service.showIncluded && service.included && (
-  <div>
-    <h3 className="mb-4 text-base text-brand-primary font-primary">
-      What&apos;s Included
-    </h3>
-    <ul className="space-y-1.5 text-base md:text-lg text-brand-secondary font-primary">
-      {service.included.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  </div>
-)}
+                  </ul> 
                 </div>
               )}
 

@@ -8,7 +8,7 @@ const LEFT_CHARGES = [
   { amount: "₹3,500", label: "Extra Saree Drape" },
   { amount: "₹1,000", label: "Extra Lehenga drape" },
   { amount: "₹1,500/hr", label: "Waiting charge between changes" },
-  { amount: "₹1,500/hr", label: "Extra hair extension / Sowri (Highlighted)" },
+  { amount: " ₹1,500 / ₹2,000", label: "Extra hair extension / Sowri (Highlighted)" },
   { amount: "₹4,500", label: "Madisar Drape" },
 ];
 

@@ -33,7 +33,7 @@ const SERVICE_DETAIL_CARDS = [
     image: publicAssetUrl("christian-wedding-img.jpg"),
     description:
       "Thoughtfully created for long wedding days that begin at the church and flow into the reception. Using Temptu airbrush or silicone-based foundations, we focus on a strong, long-lasting base with soft definition, allowing the makeup to hold through ceremonies while staying elegant and timeless.",
-    priceLabel: "Starts From",
+    priceLabel: "",
     price: "₹50,000",
     showNotes: false,
     showIncluded: true,

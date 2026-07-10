@@ -25,6 +25,11 @@ const SERVICE_DETAIL_CARDS = [
     price: "₹55,000",
     showNotes: false,
     showIncluded: true,
+    included: [
+      "✦ Airbrush Makeup Finish (Matte / Dewy)",
+      "✦ Bridal Hairstyling",
+      "✦ Saree / Lehenga Draping",
+    ],
   },
   {
     id: 3,

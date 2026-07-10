@@ -15,9 +15,9 @@ const LEFT_CHARGES = [
 const RIGHT_CHARGES = [
   { amount: "₹750 – ₹1,500", label: "Kunjalam / Andal Kondai" },
   { amount: "₹300 – ₹2,000", label: "Hair accessories ranging from" },
-  { amount: "₹300 – ₹2,000", label: "Makeup Touch-up" },
-  { amount: "₹300 – ₹2,000", label: "Change of Hairstyle" },
-  { amount: "₹1,000 – ₹2,000", label: "Jewellery stitching" },
+  { amount: "₹6,000", label: "Makeup Touch-up" },
+  { amount: "₹5,000", label: "Change of Hairstyle" },
+  { amount: "₹2,000", label: "Jewellery stitching" },
 ];
 
 function ChargeCard({ amount, label }) {

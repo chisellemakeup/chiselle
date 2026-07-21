@@ -188,7 +188,7 @@ export default function ContactPageSection() {
                 Phone number
               </p>
               <p className="text-base text-brand-secondary">
-                <a href="tel:+917308076661">+91 7308076661</a>
+                <a href="tel:+917708076661">+91 7708076661</a>
               </p>
             </div>
 

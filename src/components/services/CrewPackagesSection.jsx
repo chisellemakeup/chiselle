@@ -18,12 +18,10 @@ const CREW_PACKAGES = [
   },
   {
     id: 2,
-    anchorId: "Guest Makeup",
     title: "Guest Makeup",
     image: publicAssetUrl("guest-makeup-img.jpg"),
     description:
-      "Professional makeup by our expert crew, tailored to your outfit and occasion. Enjoy a 
-comfortable, long-lasting look that enhances your natural features with a polished finish.",
+      "Professional makeup by our expert crew, tailored to your outfit and occasion. Enjoy a comfortable, long-lasting look that enhances your natural features with a polished finish.",
     showIncluded: false,
     priceLabel: "Price",
     price: "",

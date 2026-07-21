@@ -5,14 +5,14 @@ export const NAV_LINKS = [
   { label: "ABOUT", href: "/about" },
   { label: "SERVICES & PRICING", href: "#services", dropdown: true },
   { label: "GALLERY", href: "/gallery" },
-  { label: "ACADEMY", href: "/academy" },
+  // { label: "ACADEMY", href: "/academy" },
   { label: "FAQS", href: "/faqs" },
   { label: "BLOGS", href: "/blogs" },
   { label: "CONTACT", href: "/contact" },
 ];
 
 export const STATS = [
-  { value: "5000+", label: "Happy Brides" },
+  { value: "3000+", label: "Happy Brides" },
   { value: "550+", label: "Locations" },
   { value: "10+", label: "Years" },
 ];

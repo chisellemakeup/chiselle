@@ -80,7 +80,7 @@ export default function Hero() {
             <h1 className="font-serif text-4xl md:text-5xl lg:text-[4rem] text-brand-primary tracking-[0.02em] !leading-[1.2] font-light mb-6 text-left">
               <span className="font-normal font-secondary">LUXURY </span>
               <span className="font-script text-brand-primary">
-                Bridal makeup <span className="!font-secondary">&</span> Hair
+                Bridal Makeup <span className="!font-secondary">&</span> Hair
               </span>
               <span className="font-normal font-secondary">
                 THAT STILL FEELS <br /> LIKE YOU

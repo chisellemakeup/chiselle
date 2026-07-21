@@ -95,7 +95,7 @@ export default function Hero() {
                 >
                   <span className="font-normal font-secondary">LUXURY</span>
                   <span className="font-script text-brand-primary">
-                    Bridal makeup <span className="!font-secondary">&</span>
+                    Bridal Makeup <span className="!font-secondary">&</span>
                   </span>
                 </FadeUpInView>
                 <FadeUpInView

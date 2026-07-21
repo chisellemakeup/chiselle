@@ -8,7 +8,7 @@ const PRIMARY_LINKS = [
   { label: "SERVICES", href: "/makeup-by-nowshiba" },
   { label: "PRICING", href: "/makeup-by-nowshiba" },
   { label: "GALLERY", href: "/gallery" },
-  { label: "ACADEMY", href: "/academy" },
+  // { label: "ACADEMY", href: "/academy" },
   { label: "FAQS", href: "/faqs" },
   { label: "BLOG", href: "/blogs" },
   { label: "CONTACT", href: "/contact" },

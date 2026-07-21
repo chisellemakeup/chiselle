@@ -17,7 +17,6 @@ export default function About() {
         <AboutHero />
         <AboutIntro />
         <AboutFounder />
-        <AboutCrew />
         <AcademySection />
         <AboutFaq />
         <InstaFeedSection />

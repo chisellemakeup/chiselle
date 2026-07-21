@@ -96,3 +96,8 @@
     display: none;
   }
 }
+@media (min-width: 1024px) {
+    .lg\:text-\[4rem\] {
+        font-size: 3.8rem;
+    }
+}

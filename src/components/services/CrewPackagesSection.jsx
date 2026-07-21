@@ -11,13 +11,26 @@ const CREW_PACKAGES = [
       "If your wedding is outside Chennai and you want to look like your most natural, confident self, the Chiselle Crew has you covered.",
     showIncluded: true,
     priceLabel: "",
-    price: "₹37,500",
+    price: "₹40,000",
     notes: [
       "*All travel (flight/train/bus), accommodation, local transfers, and cab arrangements (including venues without airport access) are to be arranged or reimbursed by the client for the Chiselle team.",
     ],
   },
   {
     id: 2,
+    anchorId: "Guest Makeup",
+    title: "Guest Makeup",
+    image: publicAssetUrl("guest-makeup-img.jpg"),
+    description:
+      "Professional makeup by our expert crew, tailored to your outfit and occasion. Enjoy a 
+comfortable, long-lasting look that enhances your natural features with a polished finish.",
+    showIncluded: false,
+    priceLabel: "Price",
+    price: "",
+    notes: ['✦ Makeup: <span class="font-semibold text-brand-primary">₹5,000</span>', '✦ Hairstyle: <span class="font-semibold text-brand-primary">₹4,000</span>', '✦ Saree Draping: <span class="font-semibold text-brand-primary">₹2,000</span>'],
+  },
+  {
+    id: 3,
     title: "Groom Makeup Package",
     image: publicAssetUrl("groom-makeup-package-img.jpg"),
     description:
@@ -28,7 +41,7 @@ const CREW_PACKAGES = [
     notes: ['✦ Makeup: <span class="font-semibold text-brand-primary">₹5,500</span>', '✦ Hair: <span class="font-semibold text-brand-primary">₹4,000</span>'],
   },
   {
-    id: 3,
+    id: 4,
     title: "Trial Makeup",
     image: publicAssetUrl("cc-trial-makeup-img.jpg"),
     description:

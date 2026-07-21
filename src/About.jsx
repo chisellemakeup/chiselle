@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import AboutHero from "./components/about/AboutHero";
 import AboutIntro from "./components/about/AboutIntro";
 import AboutFounder from "./components/about/AboutFounder";
-import AboutCrew from "./components/about/AboutCrew";
+// import AboutCrew from "./components/about/AboutCrew";
 import AboutFaq from "./components/about/AboutFaq";
 import Contact from "./components/Contact";
 import AcademySection from "./components/home/AcademySection";

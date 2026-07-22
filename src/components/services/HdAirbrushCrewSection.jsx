@@ -85,11 +85,11 @@ function CrewPackageCard({ pkg }) {
         </div>
 
         <div className="flex flex-col gap-3 mt-6 md:flex-row">
-          <a href="#contact" className="w-full text-center btn-primary">
+          <a href="/contact" className="w-full text-center btn-primary">
             Book Now
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="w-full text-center btn-outline border-[#E7C9C0] text-brand-primary hover:bg-[#ffe4dd]/40 hover:text-brand-primary"
           >
             Download Brochure

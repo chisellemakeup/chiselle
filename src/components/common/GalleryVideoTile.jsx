@@ -50,7 +50,7 @@ export default function GalleryVideoTile({ src, className = "", onOpen }) {
   className="block w-full aspect-[9/16] object-cover md:object-contain"
   playsInline
   preload="metadata"              
-  src={inView ? src : undefined}
+ src={inView ? `${src}#t=0.001` : undefined} 
   poster={`${src}#t=0.001`}         
   onPlay={() => setIsPlaying(true)}
   onPause={() => setIsPlaying(false)}

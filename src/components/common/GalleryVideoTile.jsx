@@ -45,16 +45,17 @@ export default function GalleryVideoTile({ src, className = "", onOpen }) {
       ref={containerRef}
       className={`relative overflow-hidden rounded-sm shadow-xl bg-black/5 ${className}`}
     >
-      <video
-        ref={videoRef}
-        className="block object-cover w-full aspect-[9/16]"
-        playsInline
-        preload="none"
-        src={inView ? src : undefined}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-        onEnded={() => setIsPlaying(false)}
-      />
+  <video
+  ref={videoRef}
+  className="block w-full aspect-[9/16] object-cover md:object-contain"
+  playsInline
+  preload="metadata"              
+  src={inView ? src : undefined}
+  poster={`${src}#t=0.1`}         
+  onPlay={() => setIsPlaying(true)}
+  onPause={() => setIsPlaying(false)}
+  onEnded={() => setIsPlaying(false)}
+   />
 
       {onOpen ? (
         <button

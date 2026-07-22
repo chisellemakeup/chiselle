@@ -108,6 +108,7 @@ export const SERVICES = [
     price: "Makeup: ₹5,500 · Hairstyling: ₹4,000",
     note: "One person – One look – One event",
     highlight: false,
+    serviceuUrl: "chiselle-crew",
   },
 ];
 

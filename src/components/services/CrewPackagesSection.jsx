@@ -135,7 +135,7 @@ function CrewPackageCard({ pkg, reverse }) {
           </div>
 
           <div className="flex flex-col gap-4 mt-8 max-w-md md:flex-row">
-            <a href="#contact" className="w-full text-center btn-primary">
+            <a href="/contact" className="w-full text-center btn-primary">
               Book Now
             </a>
             <a

@@ -7,14 +7,22 @@ export default function BlogsSection() {
   const allBlogs = getAllBlogs();
   const questions = allBlogs.find((b) => b.slug === "bridal-makeup-questions");
   const essentials = allBlogs.find((b) => b.slug === "essential-makeup-fundamentals");
+  const bridalMakeupTips = allBlogs.find((b) => b.slug === "15-Bridal-Makeup-Tips");
+  const hdMakeupExplained = allBlogs.find((b) => b.slug === "HD-Makeup-Explained");
+  const bridalMakeupCost = allBlogs.find((b) => b.slug === "Affects-Bridal-Makeup-Cost");
+  const makeupMistakes = allBlogs.find((b) => b.slug === "Common-Bridal-Makeup-Mistakes");
+  const skinCareRoutine = allBlogs.find((b) => b.slug === "Bridal-Skincare-Routine");
+  const weddingBeauty = allBlogs.find((b) => b.slug === "Wedding-Beauty-Checklist");
 
   const cardPosts = [
     essentials,
     questions,
-    questions,
-    questions,
-    questions,
-    questions,
+    bridalMakeupTips,
+    hdMakeupExplained,
+    bridalMakeupCost,
+    makeupMistakes,
+    skinCareRoutine,
+    weddingBeauty,
   ].filter(Boolean);
 
   return (

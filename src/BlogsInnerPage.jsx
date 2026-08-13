@@ -1,15 +1,15 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import InstaFeedSection from "./components/common/InstaFeedSection";
 import { getAllBlogs, getBlogBySlug } from "./data/blogs-loader";
 import BlogCard from "./components/blogs/BlogCard";
+import BlogFAQAccordion from "./components/blogs/BlogFAQAccordion";
 import FadeUpInView from "./components/common/FadeUpInView";
 import ScrubStagger from "./components/common/ScrubStagger";
 import { publicAssetUrl } from "./config/assets";
 
-const HERO_IMAGE = publicAssetUrl("blogs-inner-img1.png");
 
 const SHARE_ICONS = [
   { name: "Instagram", src: publicAssetUrl("Instagram.svg") },
@@ -27,16 +27,27 @@ export default function BlogsInnerPage() {
         title: "Blog Post",
         authorLine: "Author Name | Nov 22, 2025",
         heroTag: "DELICATE MUTED ROSE FINISH",
+        image: null,
+        intro: [],
         sections: [],
+        faq: [],
       };
     }
     return {
       title: found.title,
+      metaTitle: found.metaTitle,
+      metaDescription: found.metaDescription,
       authorLine: `${found.author} | ${found.date}`,
       heroTag: found.heroTag,
+      image: found.image,
+      intro: found.intro ?? [],
       sections: found.sections ?? [],
+      faq: found.faq ?? [],
     };
   }, [slug]);
+  
+  const heroImage = post.image || "/assets/blogs/blogs-inner-img1.png";
+
 
   const relatedPosts = useMemo(() => {
     const all = getAllBlogs();
@@ -51,9 +62,25 @@ export default function BlogsInnerPage() {
   }, [slug]);
 
   useEffect(() => {
-    if (post?.title) {
-      document.title = `${post.title} | Chiselle`;
-    }
+    if (!post) return;
+
+  document.title =
+    post.metaTitle || `${post.title} | Chiselle`;
+
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
+
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    document.head.appendChild(metaDescription);
+  }
+
+  metaDescription.setAttribute(
+    "content",
+    post.metaDescription || ""
+  );
   }, [post?.title]);
 
   return (
@@ -101,63 +128,118 @@ export default function BlogsInnerPage() {
             className="relative mx-auto max-w-5xl overflow-hidden rounded-[2px]"
           >
             <img
-              src={HERO_IMAGE}
+              src={heroImage}
               alt={post.title}
-              className="object-cover w-full"
-            />
+              className="w-full h-auto"
+           />
           </FadeUpInView>
-
+          {/* Intro paragraphs */}
+          {post.intro?.length > 0 && (
+         <div className="mx-auto mt-10 max-w-5xl space-y-4">
+         {post.intro.map((paragraph, index) => (
+         <p
+          key={`intro-${index}`}
+          className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary"
+          >
+           {paragraph}
+        </p>
+     ))}
+     </div>
+    )}
           {/* Content — each section: stagger + scrub on heading, media, copy, outcome */}
           <div className="mx-auto mt-10 space-y-12 max-w-5xl">
-            {post.sections.map((sec, secIdx) => (
-              <ScrubStagger
-                key={`${sec.heading}-${secIdx}`}
-                variant="text"
-                className="flex flex-col gap-4"
-                stagger={0.08}
-              >
-                <div data-scrub-item>
-                  <h2 className="font-primary text-[22px] md:text-[28px] lg:text-[42px] text-brand-primary">
-                    {sec.heading}
-                  </h2>
-                </div>
-                {sec.image ? (
-                  <div data-scrub-item className="overflow-hidden rounded-[2px]">
-                    <img
-                      src={sec.image}
-                      alt={sec.heading}
-                      className="object-cover w-full max-h-[420px]"
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  </div>
-                ) : null}
-                {sec.paragraphs?.map((para, idx) => (
-                  <p
-                    key={`${sec.heading}-p-${idx}`}
-                    data-scrub-item
-                    className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary"
-                  >
-                    {para}
-                  </p>
-                ))}
-                {(sec.outcomeTitle || sec.outcomeText) && (
-                  <div data-scrub-item className="space-y-2 pt-2">
-                    {sec.outcomeTitle ? (
-                      <p className="text-lg md:text-2xl -tracking-[2%] text-brand-primary font-primary">
-                        {sec.outcomeTitle}
-                      </p>
-                    ) : null}
-                    {sec.outcomeText ? (
-                      <p className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary">
-                        {sec.outcomeText}
-                      </p>
-                    ) : null}
-                  </div>
-                )}
-              </ScrubStagger>
-            ))}
+  {post.sections.map((sec, secIdx) => {
+    const previousCategory =
+      secIdx > 0 ? post.sections[secIdx - 1].categoryHeading : null;
+
+    const showCategory =
+      sec.categoryHeading &&
+      sec.categoryHeading !== previousCategory;
+
+    return (
+      <div key={`${sec.heading}-${secIdx}`}>
+        {showCategory && (
+          <FadeUpInView
+            as="h2"
+            variant="text"
+            scrub={false}
+            className="mb-6 font-primary text-[26px] md:text-[32px] lg:text-[42px] text-brand-primary"
+          >
+            {sec.categoryHeading}
+          </FadeUpInView>
+        )}
+
+        <ScrubStagger
+          variant="text"
+          className="flex flex-col gap-4"
+          stagger={0.08}
+        >
+          <div data-scrub-item>
+            <h3 className="font-primary text-[22px] md:text-[28px] lg:text-[32px] text-brand-primary">
+              {sec.heading}
+            </h3>
           </div>
+
+          {sec.image ? (
+            <div
+              data-scrub-item
+              className="overflow-hidden rounded-[2px]"
+            >
+              <img
+                src={sec.image}
+                alt={sec.heading}
+                className="object-cover w-full max-h-[420px]"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          ) : null}
+
+          {sec.paragraphs?.map((para, idx) => (
+            <p
+              key={`${sec.heading}-p-${idx}`}
+              data-scrub-item
+              className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary"
+            >
+              {para}
+            </p>
+          ))}
+
+          {sec.bullets?.length > 0 && (
+            <ul
+              data-scrub-item
+              className="space-y-2 text-sm leading-relaxed md:text-base text-brand-secondary font-primary list-disc pl-5"
+            >
+              {sec.bullets.map((bullet, idx) => (
+                <li key={`${sec.heading}-bullet-${idx}`}>
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {(sec.outcomeTitle || sec.outcomeText) && (
+            <div data-scrub-item className="space-y-2 pt-2">
+              {sec.outcomeTitle ? (
+                <p className="text-lg md:text-2xl -tracking-[2%] text-brand-primary font-primary">
+                  {sec.outcomeTitle}
+                </p>
+              ) : null}
+
+              {sec.outcomeText ? (
+                <p className="text-sm leading-relaxed md:text-base text-brand-secondary font-primary">
+                  {sec.outcomeText}
+                </p>
+              ) : null}
+            </div>
+          )}
+        </ScrubStagger>
+      </div>
+    );
+  })}
+</div>
+       <BlogFAQAccordion faq={post.faq} />
+
 
           {/* Share — label + icons stagger */}
           <section className="mx-auto mt-14 max-w-5xl">

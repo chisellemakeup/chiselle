@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { publicAssetUrl } from "../../config/assets";
 
-const BLOG_IMAGE = publicAssetUrl("blogs-card-img.png");
+// const BLOG_IMAGE = publicAssetUrl("blogs-card-img.png");
 
 function getExcerptFromPost(post) {
   const firstSection = post.sections?.[0];
@@ -24,15 +24,16 @@ export default function BlogCard({ post, hideLink = true }) {
     WebkitLineClamp: 3,
     overflow: "hidden",
   };
-
+const blogImage = post.image || "/assets/blogs/blogs-card-img.png";
+    
   const content = (
     <article className="flex h-full flex-col overflow-hidden bg-white border border-[#F0E4DE] rounded-[16px] shadow-sm">
       <div className="overflow-hidden p-4">
         <img
-          src={BLOG_IMAGE}
+           src={blogImage}
           alt={post.title}
-          className="object-cover w-full h-[220px] md:h-[300px] rounded-md"
-        />
+          className="object-cover w-full h-[220px] md:h-[auto] rounded-md"
+       />
       </div>
 
       <div className="flex flex-col flex-1 px-6 pt-5 pb-6">

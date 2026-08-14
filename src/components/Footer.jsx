@@ -126,10 +126,10 @@ export default function Footer() {
           <p className="text-sm text-white font-primary sm:text-center">
             ©{new Date().getFullYear()} chiselle makeup and hair
           </p>
-          <span className="hidden mx-2">·</span>
+          {/* <span className="hidden mx-2">·</span>
           <p className="text-sm text-white font-primary sm:text-center">
             Onceadev made an another one
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

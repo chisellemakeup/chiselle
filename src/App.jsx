@@ -21,7 +21,6 @@ export default function App() {
         <Hero />
         <MarqueeBanner />
         <About />
-        <VideoSection />
         <WhyUs />
         <SignatureStyle />
         <HowWeWork />

@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import ServiceHeroSection from "./components/Services/ServiceHeroSection";
+import ServiceHeroSection from "./components/services/ServiceHeroSection";
 import {
   SERVICE_PAGE_HERO_DATA,
   SERVICE_PAGE_WHY_US_DATA,

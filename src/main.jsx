@@ -16,6 +16,7 @@ import FaqPage from "./FaqPage.jsx";
 import ContactPage from "./ContactPage.jsx";
 import BlogsPage from "./BlogsPage.jsx";
 import BlogsInnerPage from "./BlogsInnerPage.jsx";
+import BridalMakeupArtistPage from "./BridalMakeupArtistPage.jsx"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,6 +78,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/blogs/:slug" element={<BlogsInnerPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/bridal-makeup-artist-in-tamil-nadu" element={<BridalMakeupArtistPage/>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

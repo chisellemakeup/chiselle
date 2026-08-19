@@ -186,3 +186,169 @@ export const HERO_MARQUEE_IMAGES = [
     publicAssetUrl("marquee-bottom-slide4.png"),
   ],
 ];
+export const SERVICE_PAGE_HERO_DATA = [
+  {
+    heading: {
+      first: "Bridal",
+      script: "Makeup Artist in",
+      last: "Tamil Nadu",
+      lastLine: "",
+    },
+
+    description: [
+      "Personalised bridal makeup and hair designed to enhance your natural features while still feeling like you. From traditional ceremonies to contemporary celebrations, every bridal look is thoughtfully created around your skin, style, outfit, and wedding day.",
+    ],
+
+    button: {
+      text: "ENQUIRE AVAILABILITY",
+      href: "#contact",
+    },
+  },
+];
+
+export const SERVICE_PAGE_ABOUT_DATA = {
+  label: "SO, WHAT’S CHISELLE BRIDAL MAKEUP ABOUT?",
+
+  title: {
+    first: "Bridal Makeup That Looks Like You,",
+    second: "Only More Refined",
+  },
+
+  image: {
+    src: "nowshiba-founder.jpg",
+    alt: "Nowshiba Shajahan – Founder & Senior Pro Artist at Chiselle",
+  },
+
+  paragraphs: [
+    "For us, bridal makeup isn’t about changing how you look. It’s about understanding your features, your skin, your style, and creating a look that feels naturally yours.",
+
+    "Led by Nowshiba Shahjahan, Chiselle follows a skin-first approach to bridal makeup. Every look is thoughtfully built, from the way the skin is prepared to the final details that bring everything together. Nothing forced, nothing unnecessarily heavy.",
+
+    "We also keep our bridal bookings limited. It gives us the time to understand each bride, work without rushing, and give every look the attention it deserves.",
+  ],
+
+  stats: [
+    {
+      value: "10+",
+      label: "Years Experience",
+    },
+    {
+      value: "500+",
+      label: "Brides",
+    },
+    {
+      value: "1000+",
+      label: "Looks Created",
+    },
+  ],
+
+  artist: {
+    name: "Nowshiba Shajahan",
+    role: "Founder & Senior Pro Artist, Chiselle",
+  },
+
+  button: {
+    text: "BEHIND CHISELLE",
+    href: "#about",
+  },
+};
+
+export const SERVICE_PAGE_WHY_US_DATA = {
+  label: "WHY DOES YOUR BRIDAL MAKEUP ARTIST MATTER?",
+
+  title: {
+    first: "You Should Remember How You Felt,",
+    second: "Not How Much Makeup You Wore",
+  },
+
+  paragraphs: [
+    "Your wedding day comes with long hours, close-up photographs, happy tears, tight hugs, and plenty of moments you cannot plan for. Your bridal makeup needs to move through all of it with you.",
+
+    "A professional bridal makeup artist knows how to work with your skin, features, outfit, jewellery, and the kind of bride you want to be. It’s not about adding more makeup. It’s knowing what to enhance, what to soften, and when to stop.",
+
+     "The right bridal makeup should photograph beautifully, feel comfortable for hours, and still look like you when you catch yourself in the mirror.",
+  ],
+};
+
+export const SERVICE_FAQ_DATA = {
+  title: "Frequently Asked Questions",
+
+  items: [
+    {
+      question: "How do I choose the right bridal makeup artist in Tamil Nadu?",
+      answer:
+        "Choose an artist whose work feels close to how you want to look on your wedding day. Look through real bridal work, understand their makeup style, and make sure you feel comfortable communicating your preferences with them.",
+    },
+    {
+      question: "How early should I book my bridal makeup artist?",
+      answer:
+        "Booking around 4–6 months in advance is generally recommended, especially during popular wedding dates and seasons. If you have a particular artist in mind, it is better to check availability as soon as your wedding date is confirmed.",
+    },
+    {
+      question: " What is included when I book a bridal makeup artist in Tamil Nadu?",
+      answer:
+        "The inclusions depend on the bridal service or package selected. Makeup, hairstyling, draping assistance, lashes, and other requirements can be discussed before confirming your booking so you know exactly what is included.",
+    },
+    {
+      question: "How will you decide which bridal makeup look suits me?",
+      answer: 
+      "Your look is planned around your skin, features, outfit, jewellery, wedding style, and personal comfort. References can help communicate what you like, but the final look should be adapted to suit you rather than copied exactly.",
+    },
+    {
+      question: "Will my bridal makeup last through long wedding ceremonies?",
+      answer:
+      "Yes, bridal makeup can be planned for long ceremonies using suitable skin preparation, professional products, and setting techniques. Your skin type, event timings, venue, and weather are also considered when planning the finish.",
+    },
+    {
+      question: "Can a bridal makeup artist handle both traditional and modern bridal looks?",
+      answer:
+      "Yes, but it is important to choose an artist whose portfolio shows the style you are looking for. At Chiselle, the focus remains on creating a refined, natural bridal look while adapting the details to your wedding, outfit, and personal style.",
+    }
+  ],
+};
+
+export const SERVICE_PAGE_ABOUT_INTRO_DATA = {
+  title: "What to Look for in a Bridal Makeup Artist in Tamil Nadu?",
+
+  paragraphs: [
+    "Choosing a bridal makeup artist is about more than finding a makeup style you like. Look for someone who understands your skin, listens to your preferences, and can create a look that works with your features, outfit, jewellery, and the way you want to feel on your wedding day.",
+
+    "Experience matters too. Tamil Nadu weddings can involve early mornings, long ceremonies, outfit changes, and hours of photographs. Your artist should know how to prepare the skin and create bridal makeup that stays comfortable and looks refined throughout the celebrations.",
+
+    'Most importantly, look through real bridal work and find an approach that feels like you. At <a href="https://chisellemakeupandhair.com"  class="font-medium" target="_blank" rel="noopener noreferrer">Chiselle - Luxury Bridal Makeup & Hair</a>, the focus is on thoughtful, skin-first bridal makeup that enhances rather than changes — because the right artist should help you feel confident, comfortable, and recognisably yourself.',
+  ],
+};
+
+export const SERVICE_PAGE_ABOUT_INTRO_DATA2 = {
+  title: "Why Choose Chiselle for Bridal Makeup in Tamil Nadu?",
+
+  paragraphs: [
+    "At Chiselle, we believe bridal makeup should feel personal. Instead of following the same formula for every bride, we take the time to understand your skin, features, outfit, jewellery, and the kind of look you feel most comfortable wearing.",
+
+    "Our approach is skin-first, natural, and thoughtfully detailed. From soft and minimal bridal looks to more defined wedding and reception styles, the focus remains the same — makeup that feels comfortable, photographs beautifully, and still feels like you. Brides planning multiple celebrations can also choose a Reception Makeup Artist in Tamil Nadu for a look that complements the wedding makeup while still feeling different for the occasion.",
+
+    "Led by Nowshiba Shahjahan and supported by the Chiselle Crew, every bridal look is approached with experience, care, and attention to the little details. No unnecessary layers. No chasing trends. Just bridal makeup created around you and your wedding.",
+  ],
+};
+
+export const SERVICE_PAGE_ACADEMY_DATA = {
+  image: {
+    src: "chiselle-academy-bg-img.jpg",
+    alt: "Chiselle Academy bridal makeup training in action",
+  },
+
+  label: "YOUR BRIDAL LOOK STARTS HERE",
+
+  title: {
+    first: "Let’s Create Something",
+    second: "That Still Feels Like You.",
+  },
+
+  description:
+    "Your wedding look should feel beautiful, comfortable, and completely your own. Tell us about your wedding, your style, and what you have in mind — we’ll take it from there.",
+
+  button: {
+    text: "ENQUIRE AVAILABILITY",
+    href: "#contact",
+  },
+};

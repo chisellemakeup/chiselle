@@ -1,4 +1,8 @@
-import { SIGNATURE_STYLES, HOW_WE_WORK , SERVICE_PAGE_WHY_US_DATA} from "../../data/content";
+import {
+  SIGNATURE_STYLES,
+  HOW_WE_WORK,
+  SERVICE_PAGE_WHY_US_DATA,
+} from "../../data/content";
 import { srcAssetUrl } from "../../config/assets";
 import FadeUpInView from "../common/FadeUpInView";
 import ScrubStagger from "../common/ScrubStagger";
@@ -48,7 +52,8 @@ export function WhyUs({ content = SERVICE_PAGE_WHY_US_DATA }) {
           {content.title.first} <br className="hidden lg:block" />
           {content.title.second}
         </FadeUpInView>
-        <FadeUpInView
+        {content.paragraphs.map((paragraph, index) => (
+          <FadeUpInView
             key={index}
             as="p"
             delay={0.18 + index * 0.08}
@@ -56,6 +61,7 @@ export function WhyUs({ content = SERVICE_PAGE_WHY_US_DATA }) {
           >
             {paragraph}
           </FadeUpInView>
+        ))}
       </div>
     </section>
   );

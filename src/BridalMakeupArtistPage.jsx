@@ -28,28 +28,39 @@ import ServicePageAcademy from "./components/services/ServicePageAcademy";
 
 export default function BridalMakeupArtistPage() {
   useEffect(() => {
-    document.title = "Professional Bridal Makeup Artist in Tamil Nadu";
+  // Meta Title
+  document.title = "Professional Bridal Makeup Artist in Tamil Nadu";
 
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute(
-        "content",
-        "Looking for a bridal makeup artist in Tamil Nadu? Explore professional bridal makeup and hair services with natural, personalised looks created for your wedding day.",
-      );
+  // Meta Description
+  let metaDescription = document.querySelector(
+    'meta[name="description"]'
+  );
 
-    let canonical = document.querySelector('link[rel="canonical"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement("meta");
+    metaDescription.setAttribute("name", "description");
+    document.head.appendChild(metaDescription);
+  }
 
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
+  metaDescription.setAttribute(
+    "content",
+    "Looking for a bridal makeup artist in Tamil Nadu? Explore professional bridal makeup and hair services with natural, personalised looks created for your wedding day."
+  );
 
-    canonical.setAttribute(
-      "href",
-      "https://chisellemakeupandhair.com/bridal-makeup-artist-in-tamil-nadu",
-    );
-  }, []);
+  // Canonical URL
+  let canonical = document.querySelector('link[rel="canonical"]');
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+
+  canonical.setAttribute(
+    "href",
+    "https://chisellemakeupandhair.com/bridal-makeup-artist-in-tamil-nadu"
+  );
+}, []);
   return (
     <>
       <Navbar />

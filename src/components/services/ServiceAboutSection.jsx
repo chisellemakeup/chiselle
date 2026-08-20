@@ -7,11 +7,7 @@ import FadeUpInView from "../common/FadeUpInView";
 import FadeUpLines from "../common/FadeUpLines";
 import ScrubStagger from "../common/ScrubStagger";
 
-import {
-  ensureScrollTrigger,
-  gsap,
-  ScrollTrigger,
-} from "../../lib/gsapSetup";
+import { ensureScrollTrigger, gsap, ScrollTrigger } from "../../lib/gsapSetup";
 
 const bgTexture = srcAssetUrl("bg-texture-2.svg");
 
@@ -38,7 +34,7 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
           suffix,
         };
       }),
-    [content.stats]
+    [content.stats],
   );
 
   useEffect(() => {
@@ -49,9 +45,7 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
       return undefined;
     }
 
-    if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return undefined;
     }
 
@@ -60,10 +54,7 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
     const ctx = gsap.context(() => {
       const pathLength = path.getTotalLength();
 
-      const drawLength =
-        window.innerWidth >= 1024
-          ? 4000
-          : pathLength;
+      const drawLength = window.innerWidth >= 1024 ? 4000 : pathLength;
 
       gsap.set(path, {
         strokeDasharray: drawLength,
@@ -97,9 +88,7 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
     };
   }, []);
 
-  const aboutImage = content.image?.src
-    ? srcAssetUrl(content.image.src)
-    : null;
+  const aboutImage = content.image?.src ? srcAssetUrl(content.image.src) : null;
 
   return (
     <section
@@ -150,7 +139,7 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
         </FadeUpInView>
 
         <FadeUpLines
-          as="h2"
+          as="h3"
           className="md:mb-8 font-secondary text-[1.75rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
           fromEnd
         >
@@ -164,7 +153,6 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
 
       {/* Main Content */}
       <div className="relative z-10 container grid items-center gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-
         {/* Image */}
         <div className="flex order-1 justify-center">
           <FadeUpInView
@@ -194,16 +182,13 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
           stagger={0.07}
           scrub={0.45}
         >
-
           {/* Paragraphs */}
           {content.paragraphs.map((paragraph, index) => (
             <p
               key={index}
               data-scrub-item
               className={`text-base font-light leading-relaxed font-primary text-brand-secondary ${
-                index === content.paragraphs.length - 1
-                  ? "mb-8"
-                  : "mb-4"
+                index === content.paragraphs.length - 1 ? "mb-8" : "mb-4"
               }`}
             >
               {paragraph}
@@ -222,18 +207,13 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
                   {stat.suffix}
                 </div>
 
-                <div className="mt-1 text-sm font-primary">
-                  {stat.label}
-                </div>
+                <div className="mt-1 text-sm font-primary">{stat.label}</div>
               </div>
             ))}
           </div>
 
           {/* Artist */}
-          <div
-            data-scrub-item
-            className="space-y-2"
-          >
+          <div data-scrub-item className="space-y-2">
             <p className="text-3xl font-script md:text-4xl text-brand-primary">
               {content.artist.name}
             </p>
@@ -252,7 +232,6 @@ export default function About({ content = SERVICE_PAGE_ABOUT_DATA }) {
               {content.button.text}
             </a>
           </div>
-
         </ScrubStagger>
       </div>
     </section>

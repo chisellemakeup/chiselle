@@ -41,7 +41,7 @@ export default function ServicePageAcademy({ content }) {
 
         {/* Heading */}
         <FadeUpInView
-          as="h2"
+          as="h3"
           scrub={true}
           delay={0.1}
           className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-white uppercase"

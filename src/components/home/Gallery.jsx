@@ -81,7 +81,7 @@ export default function Gallery({
             </FadeUpInView>
           )}
           <FadeUpLines
-            as="h2"
+            as="h3"
             className="mb-4 md:mb-6 font-secondary text-[28px] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-white uppercase"
             fromEnd
           >

@@ -28,7 +28,7 @@ export default function Testimonials() {
           <FadeUpInView as="p" delay={0.02} className="mb-5 text-xs md:text-sm uppercase text-brand-secondary font-primary">
             TESTIMONIALS
           </FadeUpInView>
-          <FadeUpInView as="h2" delay={0.1} className="md:mb-6 font-secondary text-[28px] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
+          <FadeUpInView as="h3" delay={0.1} className="md:mb-6 font-secondary text-[28px] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
             MY CLIENTS WORDS
             <br />
             SAY IT BEST.

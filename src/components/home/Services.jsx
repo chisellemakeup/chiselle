@@ -36,7 +36,7 @@ export default function Services() {
             Services
           </FadeUpInView>
           <FadeUpInView
-            as="h2"
+            as="h3"
             delay={0.1}
             className="mb-6 font-secondary text-[1.75rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
           >

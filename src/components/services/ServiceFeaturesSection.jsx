@@ -9,7 +9,7 @@ const signatureImg = srcAssetUrl("signature-bridal-img.jpg");
 const bgTexture4 = srcAssetUrl("bg-texture-4.png");
 const bgTexture5 = srcAssetUrl("bg-texture-5.png");
 
-export function WhyUs({content}) {
+export function WhyUs({ content = SERVICE_PAGE_WHY_US_DATA }) {
   return (
     <section className="overflow-hidden relative py-10 lg:py-[60px] bg-brand-primary">
       {/* Background texture */}
@@ -38,36 +38,24 @@ export function WhyUs({content}) {
           delay={0.02}
           className="mb-5 text-sm text-white uppercase font-primary"
         >
-          WHY DO BRIDES COME TO US?
+          {content.label}
         </FadeUpInView>
         <FadeUpInView
-          as="h2"
+          as="h3"
           delay={0.1}
           className="mb-6 font-secondary text-[1.75rem] md:text-[2.2rem] lg:text-[42px] leading-snug tracking-[0.02em] text-white uppercase"
         >
-          THE BEST BRIDAL LOOK IS THE <br className="hidden lg:block" />
-          ONE THAT FEELS LIKE YOU
+          {content.title.first} <br className="hidden lg:block" />
+          {content.title.second}
         </FadeUpInView>
         <FadeUpInView
-          as="p"
-          delay={0.18}
-          className="mb-4 text-base md:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]"
-        >
-          Chiselle brides are our biggest asset. They trust us with their
-          vision, and we make sure every detail of their bridal makeup and hair
-          is taken care of.
-        </FadeUpInView>
-        <FadeUpInView
-          as="p"
-          delay={0.26}
-          className="mb-0 text-base lg:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]"
-        >
-          The best moments? When a bride says, &ldquo;Omg, I still feel like
-          me&rdquo; or when the family can&apos;t stop beaming with joy seeing
-          her. Minimal, real, and intentional. The result? Happy, radiant and
-          confident brides who feel like themselves… and keep coming back for
-          more.
-        </FadeUpInView>
+            key={index}
+            as="p"
+            delay={0.18 + index * 0.08}
+            className="mb-4 text-base md:text-lg font-light leading-relaxed text-white font-primary lg:max-w-[710px]"
+          >
+            {paragraph}
+          </FadeUpInView>
       </div>
     </section>
   );
@@ -96,7 +84,7 @@ export function SignatureStyle() {
             SIGNATURE BRIDAL STYLE
           </FadeUpInView>
           <FadeUpInView
-            as="h2"
+            as="h3"
             delay={0.1}
             className="mb-6 font-secondary text-[1.75rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
           >
@@ -203,7 +191,7 @@ export function HowWeWork() {
             HOW WE WORK
           </FadeUpInView>
           <FadeUpInView
-            as="h2"
+            as="h3"
             delay={0.1}
             className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
           >

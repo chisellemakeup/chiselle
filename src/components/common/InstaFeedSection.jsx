@@ -27,9 +27,9 @@ export default function InstaFeedSection({
     <section className="bg-white">
       <div className="max-w-none">
         <div className="mb-10 text-center">
-          <h2 className="mb-3 font-secondary text-[22px] md:text-[28px] lg:text-[42px] leading-tight tracking-[0.08em] text-brand-primary uppercase">
+          <h3 className="mb-3 font-secondary text-[22px] md:text-[28px] lg:text-[42px] leading-tight tracking-[0.08em] text-brand-primary uppercase">
             Find us on <br /> Instagram
-          </h2>
+          </h3>
         </div>
 
         {/* Full-width horizontal marquee + hover overlay */}

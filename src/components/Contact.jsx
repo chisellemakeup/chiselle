@@ -186,7 +186,7 @@ export default function Contact() {
           <FadeUpInView as="p" delay={0.02} className="mb-5 text-sm uppercase text-brand-secondary font-primary">
             Get in touch
           </FadeUpInView>
-          <FadeUpInView as="h2" delay={0.1} className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
+          <FadeUpInView as="h3" delay={0.1} className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
             LET ME TRANSFORM
             <br />
             YOUR LOOK

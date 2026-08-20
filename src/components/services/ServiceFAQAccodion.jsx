@@ -12,19 +12,16 @@ export default function ServiceFAQAccordion({
   if (!faq.length) return null;
 
   const toggleFAQ = (index) => {
-    setOpenIndex((currentIndex) =>
-      currentIndex === index ? -1 : index
-    );
+    setOpenIndex((currentIndex) => (currentIndex === index ? -1 : index));
   };
 
   return (
     <section className="relative py-16 bg-white lg:py-24">
       <div className="container px-6 mx-auto max-w-4xl lg:px-16">
-
         {/* FAQ Heading */}
         <div className="mx-auto mb-10 max-w-3xl text-left md:text-center">
           <FadeUpInView
-            as="h2"
+            as="h3"
             variant="text"
             scrub={false}
             delay={0.1}
@@ -47,7 +44,6 @@ export default function ServiceFAQAccordion({
                 stagger={0.06}
               >
                 <div data-scrub-item className="py-5 md:py-6">
-
                   <button
                     type="button"
                     aria-expanded={isOpen}
@@ -57,26 +53,20 @@ export default function ServiceFAQAccordion({
                   >
                     {/* Question + Answer */}
                     <div className="flex-1 min-w-0">
-
-                      <p
+                      <h3
                         className={`mb-2 text-base font-primary -tracking-[2%] ${
-                          isOpen
-                            ? "text-brand-primary"
-                            : "text-brand-secondary"
+                          isOpen ? "text-brand-primary" : "text-brand-secondary"
                         }`}
                       >
                         {item.question}
-                      </p>
+                      </h3>
 
                       <AccordionAnswer
                         isOpen={isOpen}
                         className="mt-2 text-base font-light leading-relaxed text-brand-secondary font-primary"
                       >
-                        <p id={`faq-answer-${index}`}>
-                          {item.answer}
-                        </p>
+                        <p id={`faq-answer-${index}`}>{item.answer}</p>
                       </AccordionAnswer>
-
                     </div>
 
                     {/* Plus / Close Icon */}
@@ -87,13 +77,11 @@ export default function ServiceFAQAccordion({
                       {isOpen ? "\u00D7" : "\u002B"}
                     </span>
                   </button>
-
                 </div>
               </ScrubStagger>
             );
           })}
         </div>
-
       </div>
     </section>
   );

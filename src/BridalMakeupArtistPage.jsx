@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ServiceHeroSection from "./components/services/ServiceHeroSection";
 import {
   SERVICE_PAGE_HERO_DATA,
   SERVICE_PAGE_WHY_US_DATA,
+  SERVICE_FAQ_DATA,
+  SERVICE_PAGE_ABOUT_INTRO_DATA,
+  SERVICE_PAGE_ABOUT_INTRO_DATA2,
+  SERVICE_PAGE_ACADEMY_DATA,
 } from "./data/content";
 import ServiceAboutSection from "./components/services/ServiceAboutSection";
 import {
@@ -14,18 +19,24 @@ import {
 import Services from "./components/home/Services";
 import Gallery from "./components/home/Gallery";
 import ServiceFAQAccordion from "./components/services/ServiceFAQAccodion";
-import { SERVICE_FAQ_DATA } from "./data/content";
-import { SERVICE_PAGE_ABOUT_INTRO_DATA } from "./data/content";
-import { SERVICE_PAGE_ABOUT_INTRO_DATA2 } from "./data/content";
 import ServicePageIntroSection from "./components/services/ServicePageIntroSection";
 import ServicePageIntroSection2 from "./components/services/ServicePageIntroSection2";
 import Testimonials from "./components/home/Testimonials";
 import InstaFeedSection from "./components/common/InstaFeedSection";
 import Contact from "./components/Contact";
 import ServicePageAcademy from "./components/services/ServicePageAcademy";
-import { SERVICE_PAGE_ACADEMY_DATA } from "./data/content";
 
 export default function BridalMakeupArtistPage() {
+  useEffect(() => {
+    document.title = "Professional Bridal Makeup Artist in Tamil Nadu";
+
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "Looking for a bridal makeup artist in Tamil Nadu? Explore professional bridal makeup and hair services with natural, personalised looks created for your wedding day.",
+      );
+  }, []);
   return (
     <>
       <Navbar />

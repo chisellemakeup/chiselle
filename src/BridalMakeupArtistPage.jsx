@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ServiceHeroSection from "./components/services/ServiceHeroSection";
+import Services from "./components/home/Services";
 import {
   SERVICE_PAGE_HERO_DATA,
   SERVICE_PAGE_WHY_US_DATA,
@@ -16,7 +17,6 @@ import {
   SignatureStyle,
   HowWeWork,
 } from "./components/services/ServiceFeaturesSection";
-import Services from "./components/home/Services";
 import Gallery from "./components/home/Gallery";
 import ServiceFAQAccordion from "./components/services/ServiceFAQAccodion";
 import ServicePageIntroSection from "./components/services/ServicePageIntroSection";

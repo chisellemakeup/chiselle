@@ -50,10 +50,13 @@ export default function Contact() {
   }, []);
 
   function downloadBrochure() {
-    const link = document.createElement("a");
+    const pdfUrl = "/chiselle-brochure.pdf";
 
-    link.href = "/chiselle-brochure.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
     link.download = "Chiselle-Brochure.pdf";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
 
     document.body.appendChild(link);
     link.click();
@@ -163,11 +166,14 @@ export default function Contact() {
       );
 
       setSent(true);
-      localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
+      const brochureRequested =
+        sessionStorage.getItem("brochureRequested") === "true";
+
       if (brochureRequested) {
         downloadBrochure();
         sessionStorage.removeItem("brochureRequested");
       }
+      localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
       setForm({
         name: "",
         email: "",

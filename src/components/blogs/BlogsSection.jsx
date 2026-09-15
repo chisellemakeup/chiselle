@@ -17,12 +17,12 @@ export default function BlogsSection() {
   const cardPosts = [
     essentials,
     questions,
-    bridalMakeupTips,
-    hdMakeupExplained,
-    bridalMakeupCost,
-    makeupMistakes,
-    skinCareRoutine,
-    weddingBeauty,
+    // bridalMakeupTips,
+    // hdMakeupExplained,
+    // bridalMakeupCost,
+    // makeupMistakes,
+    // skinCareRoutine,
+    // weddingBeauty,
   ].filter(Boolean);
 
   return (

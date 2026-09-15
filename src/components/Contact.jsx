@@ -44,8 +44,9 @@ export default function Contact() {
   const [formStartedAt] = useState(() => Date.now());
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    setBrochureRequested(params.get("brochure") === "true");
+    const requested = sessionStorage.getItem("brochureRequested") === "true";
+
+    setBrochureRequested(requested);
   }, []);
 
   function downloadBrochure() {
@@ -165,6 +166,7 @@ export default function Contact() {
       localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
       if (brochureRequested) {
         downloadBrochure();
+        sessionStorage.removeItem("brochureRequested");
       }
       setForm({
         name: "",

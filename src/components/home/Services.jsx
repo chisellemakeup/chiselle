@@ -137,7 +137,7 @@ export default function Services() {
                       EXPLORE OUR SERVICES
                     </a>
                     <a
-                      href="#contact"
+                      href="/?brochure=true#contact"
                       className="btn-outline border-[#2B04051A] w-full md:w-auto text-center text-brand-primary hover:bg-[#ffe4dd]/40 hover:text-brand-primary"
                     >
                       DOWNLOAD BROCHURE

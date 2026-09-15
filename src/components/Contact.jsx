@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { srcAssetUrl } from "../config/assets";
 import FadeUpInView from "./common/FadeUpInView";
@@ -40,7 +40,24 @@ export default function Contact() {
   const [submitError, setSubmitError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [sent, setSent] = useState(false);
+  const [brochureRequested, setBrochureRequested] = useState(false);
   const [formStartedAt] = useState(() => Date.now());
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setBrochureRequested(params.get("brochure") === "true");
+  }, []);
+
+  function downloadBrochure() {
+    const link = document.createElement("a");
+
+    link.href = "/chiselle-brochure.pdf";
+    link.download = "Chiselle-Brochure.pdf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   function validate(values) {
     const nextErrors = {};
@@ -51,8 +68,10 @@ export default function Contact() {
     } else if (!EMAIL_REGEX.test(values.email.trim())) {
       nextErrors.email = "Please enter a valid email address.";
     }
-    if (!values.service.trim()) nextErrors.service = "Please enter the service you need.";
-    if (!values.message.trim()) nextErrors.message = "Please enter your message.";
+    if (!values.service.trim())
+      nextErrors.service = "Please enter the service you need.";
+    if (!values.message.trim())
+      nextErrors.message = "Please enter your message.";
 
     return nextErrors;
   }
@@ -99,7 +118,9 @@ export default function Contact() {
     }
 
     if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-      setSubmitError("Email service is not configured. Please set EmailJS environment values.");
+      setSubmitError(
+        "Email service is not configured. Please set EmailJS environment values.",
+      );
       return;
     }
 
@@ -112,7 +133,9 @@ export default function Contact() {
     const msUntilAllowed = RATE_LIMIT_MS - (Date.now() - lastSubmitAt);
     if (msUntilAllowed > 0) {
       const waitSeconds = Math.ceil(msUntilAllowed / 1000);
-      setSubmitError(`Please wait ${waitSeconds}s before sending another request.`);
+      setSubmitError(
+        `Please wait ${waitSeconds}s before sending another request.`,
+      );
       return;
     }
 
@@ -135,11 +158,14 @@ export default function Contact() {
           reply_to: trimmedForm.email,
           submitted_at: new Date().toLocaleString(),
         },
-        { publicKey: EMAILJS_PUBLIC_KEY }
+        { publicKey: EMAILJS_PUBLIC_KEY },
       );
 
       setSent(true);
       localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
+      if (brochureRequested) {
+        downloadBrochure();
+      }
       setForm({
         name: "",
         email: "",
@@ -183,111 +209,129 @@ export default function Contact() {
 
         {/* Right: heading + form */}
         <div className="md:mx-auto md:max-w-xl lg:mx-0">
-          <FadeUpInView as="p" delay={0.02} className="mb-5 text-sm uppercase text-brand-secondary font-primary">
+          <FadeUpInView
+            as="p"
+            delay={0.02}
+            className="mb-5 text-sm uppercase text-brand-secondary font-primary"
+          >
             Get in touch
           </FadeUpInView>
-          <FadeUpInView as="h3" delay={0.1} className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase">
+          <FadeUpInView
+            as="h3"
+            delay={0.1}
+            className="mb-6 font-secondary text-[2.1rem] md:text-[2.4rem] lg:text-[42px] leading-snug tracking-[0.02em] text-brand-primary uppercase"
+          >
             LET ME TRANSFORM
             <br />
             YOUR LOOK
           </FadeUpInView>
 
           <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-              <input
-                type="text"
-                id="website"
-                value={form.website}
-                onChange={handleChange}
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
-                className="hidden"
-              />
+            <input
+              type="text"
+              id="website"
+              value={form.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
 
-              {FIELDS.map((field) => (
-                <div key={field.id} className="border-b border-[#00020133]">
-                  <label
-                    htmlFor={field.id}
-                    className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
-                  >
-                    {field.label}
-                  </label>
-                  <input
-                    id={field.id}
-                    type={field.type}
-                    value={form[field.id]}
-                    onChange={handleChange}
-                    aria-invalid={Boolean(errors[field.id])}
-                    className="pb-2 w-full text-sm bg-transparent text-brand-dark focus:outline-none font-primary"
-                  />
-                  {errors[field.id] ? (
-                    <p className="pt-2 text-xs text-red-600 font-primary">{errors[field.id]}</p>
-                  ) : null}
-                </div>
-              ))}
-
-              <div className="border-b border-[#00020133]">
+            {FIELDS.map((field) => (
+              <div key={field.id} className="border-b border-[#00020133]">
                 <label
-                  htmlFor="service"
+                  htmlFor={field.id}
                   className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
                 >
-                  The service you are looking for
+                  {field.label}
                 </label>
-                <select
-                  id="service"
-                  value={form.service}
+                <input
+                  id={field.id}
+                  type={field.type}
+                  value={form[field.id]}
                   onChange={handleChange}
-                  aria-invalid={Boolean(errors.service)}
+                  aria-invalid={Boolean(errors[field.id])}
                   className="pb-2 w-full text-sm bg-transparent text-brand-dark focus:outline-none font-primary"
-                >
-                  <option value="" disabled>
-                    Select a service
-                  </option>
-                  {SERVICES.map((service) => (
-                    <option key={service} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-                {errors.service ? (
-                  <p className="pt-2 text-xs text-red-600 font-primary">{errors.service}</p>
-                ) : null}
-              </div>
-
-              <div className="border-b border-[#00020133]">
-                <label
-                  htmlFor="message"
-                  className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
-                >
-                  Your message
-                </label>
-                <textarea
-                  id="message"
-                  rows={3}
-                  value={form.message}
-                  onChange={handleChange}
-                  aria-invalid={Boolean(errors.message)}
-                  className="pb-2 w-full text-sm bg-transparent resize-none text-brand-dark focus:outline-none font-primary"
                 />
-                {errors.message ? (
-                  <p className="pt-2 text-xs text-red-600 font-primary">{errors.message}</p>
+                {errors[field.id] ? (
+                  <p className="pt-2 text-xs text-red-600 font-primary">
+                    {errors[field.id]}
+                  </p>
                 ) : null}
               </div>
+            ))}
 
-              {submitError ? (
-                <p className="text-sm text-red-600 font-primary">{submitError}</p>
-              ) : null}
-              {sent ? (
-                <p className="text-sm leading-relaxed text-green-700 font-primary">
-                  Thank you for your message. We&apos;ll get back to you shortly.
+            <div className="border-b border-[#00020133]">
+              <label
+                htmlFor="service"
+                className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
+              >
+                The service you are looking for
+              </label>
+              <select
+                id="service"
+                value={form.service}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.service)}
+                className="pb-2 w-full text-sm bg-transparent text-brand-dark focus:outline-none font-primary"
+              >
+                <option value="" disabled>
+                  Select a service
+                </option>
+                {SERVICES.map((service) => (
+                  <option key={service} value={service}>
+                    {service}
+                  </option>
+                ))}
+              </select>
+              {errors.service ? (
+                <p className="pt-2 text-xs text-red-600 font-primary">
+                  {errors.service}
                 </p>
               ) : null}
+            </div>
 
-              <FadeUpInView as="div" variant="button" delay={0.18}>
-                <button type="submit" className="inline-block btn-primary" disabled={isSubmitting}>
-                  {isSubmitting ? "SENDING..." : "SEND A REQUEST"}
-                </button>
-              </FadeUpInView>
+            <div className="border-b border-[#00020133]">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm tracking-[0.02em] text-brand-secondary font-primary"
+              >
+                Your message
+              </label>
+              <textarea
+                id="message"
+                rows={3}
+                value={form.message}
+                onChange={handleChange}
+                aria-invalid={Boolean(errors.message)}
+                className="pb-2 w-full text-sm bg-transparent resize-none text-brand-dark focus:outline-none font-primary"
+              />
+              {errors.message ? (
+                <p className="pt-2 text-xs text-red-600 font-primary">
+                  {errors.message}
+                </p>
+              ) : null}
+            </div>
+
+            {submitError ? (
+              <p className="text-sm text-red-600 font-primary">{submitError}</p>
+            ) : null}
+            {sent ? (
+              <p className="text-sm leading-relaxed text-green-700 font-primary">
+                Thank you for your message. We&apos;ll get back to you shortly.
+              </p>
+            ) : null}
+
+            <FadeUpInView as="div" variant="button" delay={0.18}>
+              <button
+                type="submit"
+                className="inline-block btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "SENDING..." : "SEND A REQUEST"}
+              </button>
+            </FadeUpInView>
           </form>
         </div>
       </div>

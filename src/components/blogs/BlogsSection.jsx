@@ -5,8 +5,8 @@ import ScrubStagger from "../common/ScrubStagger";
 
 export default function BlogsSection() {
   const allBlogs = getAllBlogs();
-  const questions = allBlogs.find((b) => b.slug === "bridal-makeup-questions");
-  const essentials = allBlogs.find((b) => b.slug === "essential-makeup-fundamentals");
+  // const questions = allBlogs.find((b) => b.slug === "bridal-makeup-questions");
+  // const essentials = allBlogs.find((b) => b.slug === "essential-makeup-fundamentals");
   // const bridalMakeupTips = allBlogs.find((b) => b.slug === "15-Bridal-Makeup-Tips");
   // const hdMakeupExplained = allBlogs.find((b) => b.slug === "HD-Makeup-Explained");
   // const bridalMakeupCost = allBlogs.find((b) => b.slug === "Affects-Bridal-Makeup-Cost");
@@ -15,8 +15,8 @@ export default function BlogsSection() {
   // const weddingBeauty = allBlogs.find((b) => b.slug === "Wedding-Beauty-Checklist");
 
   const cardPosts = [
-    essentials,
-    questions,
+    // essentials,
+    // questions,
     // bridalMakeupTips,
     // hdMakeupExplained,
     // bridalMakeupCost,

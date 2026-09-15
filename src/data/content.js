@@ -7,7 +7,7 @@ export const NAV_LINKS = [
   { label: "GALLERY", href: "/gallery" },
   // { label: "ACADEMY", href: "/academy" },
   { label: "FAQS", href: "/faqs" },
-  { label: "BLOGS", href: "/blogs" },
+  { label: "BLOGS", href: "/" },
   { label: "CONTACT", href: "/contact" },
 ];
 
